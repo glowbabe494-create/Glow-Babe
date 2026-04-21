@@ -10,11 +10,21 @@
   <header>
     <h1 class="logo">GlowBabe</h1>
     <nav>
-      <a href="#">Home</a>
-      <a href="#">Beauty</a>
-      <a href="#">Electronics</a>
-      <a href="#">Jewelry</a>
-      <a href="#">Contact</a>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Beauty</a></li>
+        <li><a href="#">Electronics</a></li>
+        <li>
+          <a href="#">Jewelry ▼</a>
+          <ul class="dropdown">
+            <li><a href="#">Rings</a></li>
+            <li><a href="#">Cosmetics</a></li>
+            <li><a href="#">Bags</a></li>
+            <li><a href="#">Accessories</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
@@ -23,7 +33,7 @@
     <div class="hero-text">
       <h2>Premium Beauty & Electronics</h2>
       <p>Elegance meets technology — shop GlowBabe today!</p>
-      <a href="https://wa.me/923001234567" class="btn">Order on WhatsApp</a>
+      <a href="https://wa.me/923146604294" class="btn">Order on WhatsApp</a>
     </div>
   </section>
 
@@ -33,28 +43,36 @@
       <img src="lipstick.jpg" alt="Lipstick">
       <h3>GlowBabe Lipstick</h3>
       <p>Rs. 1200</p>
-      <button>Add to Cart</button>
+      <button onclick="addToCart('Lipstick', 1200)">Add to Cart</button>
     </div>
     <div class="product">
       <img src="foundation.jpg" alt="Foundation">
       <h3>GlowBabe Foundation</h3>
       <p>Rs. 2500</p>
-      <button>Add to Cart</button>
+      <button onclick="addToCart('Foundation', 2500)">Add to Cart</button>
     </div>
-    <div class="product">
-      <img src="watch.jpg" alt="Luxury Watch">
-      <h3>GlowBabe Watch</h3>
-      <p>Rs. 15,000</p>
-      <button>Add to Cart</button>
-    </div>
+  </section>
+
+  <!-- Order Box -->
+  <section class="order-box">
+    <h2>Place Your Order</h2>
+    <textarea id="orderDetails" placeholder="Write your order here..."></textarea>
+    <button onclick="sendOrder()">Send to WhatsApp</button>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>© 2026 GlowBabe Store | Luxury Beauty & Electronics</p>
+    <p>Contact Information:</p>
+    <p>📞 03146604294 | ✉️ glowbabe494@gmail.com | 📍 Lahore, Punjab, Pakistan</p>
     <div class="social">
-      <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">WhatsApp</a>
+      <img src="tiktok.png" alt="TikTok">
+      <img src="snapchat.png" alt="Snapchat">
+      <img src="facebook.png" alt="Facebook">
+      <img src="instagram.png" alt="Instagram">
     </div>
+    <p>© 2026 GlowBabe Store | Luxury Beauty & Electronics</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
