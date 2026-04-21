@@ -1,14 +1,5 @@
-let cart = [];
-
-function addToCart(product, price) {
-  cart.push({product, price});
-  alert(product + " added to cart!");
-}
-
-function checkout() {
-  let message = "Order:\n";
-  cart.forEach(item => {
-    message += item.product + " - Rs." + item.price + "\n";
-  });
-  window.open("https://wa.me/923001234567?text=" + encodeURIComponent(message));
+function sendOrder() {
+  let orderText = document.getElementById("orderDetails").value;
+  let whatsappUrl = "https://wa.me/923146604294?text=" + encodeURIComponent(orderText);
+  window.open(whatsappUrl, "_blank");
 }
