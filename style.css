@@ -15,7 +15,7 @@ header {
   color: white;
 }
 header .logo {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
 }
 header nav a {
@@ -27,15 +27,18 @@ header nav a:hover {
   text-decoration: underline;
 }
 
-/* Hero Section */
+/* Hero Banner */
 .hero {
-  text-align: center;
-  padding: 80px 20px;
-  background: linear-gradient(rgba(233,30,99,0.8), rgba(255,255,255,0.9)), url('banner.jpg') no-repeat center/cover;
+  height: 400px;
+  background: linear-gradient(rgba(233,30,99,0.6), rgba(0,0,0,0.6)), url('banner.jpg') no-repeat center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
+  text-align: center;
 }
 .hero h2 {
-  font-size: 40px;
+  font-size: 42px;
   margin-bottom: 10px;
 }
 .hero p {
@@ -97,4 +100,12 @@ footer {
   padding: 20px;
   background: #333;
   color: white;
+}
+footer .social a {
+  color: #e91e63;
+  margin: 0 10px;
+  text-decoration: none;
+}
+footer .social a:hover {
+  text-decoration: underline;
 }
