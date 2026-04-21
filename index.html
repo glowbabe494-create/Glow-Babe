@@ -3,39 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <title>GlowBabe Store</title>
-  <!-- CSS file link -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Welcome to GlowBabe</h1>
-  <p>Your premium beauty & electronics store</p>
+  <!-- Navbar -->
+  <header>
+    <h1 class="logo">GlowBabe</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Beauty</a>
+      <a href="#">Electronics</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
 
-  <div class="product-grid">
-  <div class="product">
-    <img src="lipstick.jpg" alt="Lipstick">
-    <h2>GlowBabe Lipstick</h2>
-    <p>Rs. 1200</p>
-    <button onclick="addToCart('GlowBabe Lipstick', 1200)">Add to Cart</button>
-  </div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Premium Beauty & Electronics</h2>
+    <p>Elegance meets technology — shop GlowBabe today!</p>
+    <a href="https://wa.me/923001234567" class="btn">Order on WhatsApp</a>
+  </section>
 
-  <div class="product">
-    <img src="foundation.jpg" alt="Foundation">
-    <h2>GlowBabe Foundation</h2>
-    <p>Rs. 2500</p>
-    <button onclick="addToCart('GlowBabe Foundation', 2500)">Add to Cart</button>
-  </div>
-</div>
+  <!-- Product Grid -->
+  <section class="product-grid">
+    <div class="product">
+      <img src="lipstick.jpg" alt="Lipstick">
+      <h3>GlowBabe Lipstick</h3>
+      <p>Rs. 1200</p>
+      <button onclick="addToCart('Lipstick', 1200)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="foundation.jpg" alt="Foundation">
+      <h3>GlowBabe Foundation</h3>
+      <p>Rs. 2500</p>
+      <button onclick="addToCart('Foundation', 2500)">Add to Cart</button>
+    </div>
+  </section>
 
-  <div class="product">
-    <h2>GlowBabe Lipstick</h2>
-    <p>Rs. 1200</p>
-    <button onclick="addToCart('GlowBabe Lipstick', 1200)">Add to Cart</button>
-  </div>
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 GlowBabe Store | Designed with ❤️ in Lahore</p>
+  </footer>
 
-  <!-- Checkout button -->
-  <button onclick="checkout()">Checkout on WhatsApp</button>
-
-  <!-- JS file link -->
   <script src="script.js"></script>
 </body>
 </html>
