@@ -3,35 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <title>GlowBabe Store</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background: #f9f9f9;
-      margin: 0;
-      padding: 50px;
-    }
-    h1 {
-      color: #e91e63;
-    }
-    .btn {
-      display: inline-block;
-      padding: 12px 20px;
-      margin-top: 20px;
-      background: #25D366;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-size: 18px;
-    }
-    .btn:hover {
-      background: #128C7E;
-    }
-  </style>
+  <!-- CSS file link -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>Welcome to GlowBabe</h1>
   <p>Your premium beauty & electronics store</p>
-  <a class="btn" href="https://wa.me/923001234567">Order on WhatsApp</a>
+
+  <!-- Example product -->
+  <div class="product">
+    <h2>GlowBabe Lipstick</h2>
+    <p>Rs. 1200</p>
+    <button onclick="addToCart('GlowBabe Lipstick', 1200)">Add to Cart</button>
+  </div>
+
+  <!-- Checkout button -->
+  <button onclick="checkout()">Checkout on WhatsApp</button>
+
+  <!-- JS file link -->
+  <script src="script.js"></script>
 </body>
 </html>
