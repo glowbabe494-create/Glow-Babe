@@ -81,34 +81,37 @@ header ul li:hover .dropdown {
   transform: translateY(-5px);
 }
 
-/* Order Box */
-.order-box {
+/* Order Form */
+.order-form {
+  max-width: 600px;
+  margin: 50px auto;
+  background: #f9f9f9;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  text-align: left;
+}
+.order-form h2 {
   text-align: center;
-  padding: 40px;
+  color: #e91e63;
+  margin-bottom: 20px;
 }
-.order-box textarea {
-  width: 60%;
-  height: 100px;
-  border-radius: 8px;
-  padding: 10px;
-}
-.order-box button {
+.order-form label {
+  display: block;
   margin-top: 10px;
-  padding: 12px 20px;
+  font-weight: bold;
+}
+.order-form input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+.order-form button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
   background: #25D366;
   color: white;
   border: none;
-  border-radius: 5px;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #333;
-  color: white;
-}
-footer .social img {
-  width: 30px;
-  margin: 0 10px;
-}
