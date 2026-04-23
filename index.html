@@ -2,67 +2,263 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GlowBabe Store</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    header h1 {
+      color: #e91e63;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: #e91e63;
+    }
+    .hero {
+      background: #f8bbd0;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .hero h2 {
+      font-size: 36px;
+      color: #c2185b;
+      margin: 0;
+    }
+    .hero p {
+      margin-top: 10px;
+      color: #555;
+    }
+    .hero button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #e91e63;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .hero button:hover {
+      background: #d81b60;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+    .product {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .product img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .product h3 {
+      margin: 15px 0 5px;
+      font-size: 20px;
+    }
+    .product p {
+      color: #777;
+    }
+    .product button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #e91e63;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .product button:hover {
+      background: #d81b60;
+    }
+    .cart {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .cart h2 {
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+    .cart ul {
+      list-style: none;
+      padding: 0;
+    }
+    .cart li {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .cart button {
+      background: #f44336;
+      border: none;
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .cart button:hover {
+      background: #d32f2f;
+    }
+    .checkout {
+      margin-top: 20px;
+      padding: 12px;
+      background: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+    }
+    .checkout:hover {
+      background: #388e3c;
+    }
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #e91e63;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-  <!-- Navbar -->
+
+  <!-- Header -->
   <header>
-    <h1 class="logo">GlowBabe</h1>
+    <h1>GlowBabe</h1>
     <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Beauty</a></li>
-        <li><a href="#">Electronics</a></li>
-        <li>
-          <a href="#">Shop ▼</a>
-          <ul class="dropdown">
-            <li><a href="#">Rings</a></li>
-            <li><a href="#">Cosmetics</a></li>
-            <li><a href="#">Bags</a></li>
-            <li><a href="#">Accessories</a></li>
-          </ul>
-        </li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <a href="#">Home</a>
+      <a href="#">Shop</a>
+      <a href="#">Contact</a>
     </nav>
   </header>
 
   <!-- Hero Banner -->
   <section class="hero">
-    <div class="hero-text">
-      <h2>Premium Beauty & Electronics</h2>
-      <p>Elegance meets technology — shop GlowBabe today!</p>
-      <a href="order.html" class="btn">Order on WhatsApp</a>
+    <h2>Welcome to GlowBabe</h2>
+    <p>Luxury beauty & accessories at your fingertips</p>
+    <button>Shop Now</button>
+  </section>
+
+  <!-- Products -->
+  <section class="products">
+    <div class="product">
+      <img src="assets/lipstick.jpg" alt="Lipstick">
+      <h3>Lipstick</h3>
+      <p>Rs 1200</p>
+      <button onclick="addToCart('Lipstick', 1200)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="assets/perfume.jpg" alt="Perfume">
+      <h3>Perfume</h3>
+      <p>Rs 3500</p>
+      <button onclick="addToCart('Perfume', 3500)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="assets/watch.jpg" alt="Watch">
+      <h3>Watch</h3>
+      <p>Rs 5000</p>
+      <button onclick="addToCart('Watch', 5000)">Add to Cart</button>
     </div>
   </section>
 
-  <!-- Product Grid -->
-  <section class="product-grid">
-    <div class="product">
-      <img src="lipstick.jpg" alt="Lipstick">
-      <h3>GlowBabe Lipstick</h3>
-      <p>Rs. 1200</p>
-      <button>Add to Cart</button>
-    </div>
-    <div class="product">
-      <img src="foundation.jpg" alt="Foundation">
-      <h3>GlowBabe Foundation</h3>
-      <p>Rs. 2500</p>
-      <button>Add to Cart</button>
-    </div>
+  <!-- Cart -->
+  <section class="cart">
+    <h2>🛒 Cart</h2>
+    <ul id="cart-items"></ul>
+    <h3 id="total">Total: Rs 0</h3>
+    <button class="checkout" onclick="checkoutWhatsApp()">Checkout via WhatsApp</button>
   </section>
 
   <!-- Footer -->
-  <footer id="contact">
-    <p>📞 03146604294 | ✉️ glowbabe494@gmail.com | 📍 Lahore, Punjab, Pakistan</p>
-    <div class="social">
-      <img src="tiktok.png" alt="TikTok">
-      <img src="snapchat.png" alt="Snapchat">
-      <img src="facebook.png" alt="Facebook">
-      <img src="instagram.png" alt="Instagram">
+  <footer>
+    <p>© 2026 GlowBabe. All rights reserved.</p>
+    <div>
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="#">WhatsApp</a>
     </div>
-    <p>© 2026 GlowBabe Store | Luxury Beauty & Electronics</p>
   </footer>
+
+  <script>
+    let cart = [];
+
+    function addToCart(name, price) {
+      cart.push({ name, price });
+      renderCart();
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      renderCart();
+    }
+
+    function renderCart() {
+      const cartItems = document.getElementById('cart-items');
+      cartItems.innerHTML = '';
+      cart.forEach((item, i) => {
+        cartItems.innerHTML += `
+          <li>
+            ${item.name} - Rs ${item.price}
+            <button onclick="removeFromCart(${i})">Remove</button>
+          </li>
+        `;
+      });
+      const total = cart.reduce((sum, item) => sum + item.price, 0);
+      document.getElementById('total').innerText = 'Total: Rs ' + total;
+    }
+
+    function checkoutWhatsApp() {
+      if (cart.length === 0) {
+        alert("Cart is empty!");
+        return;
+      }
+      const message = cart.map(item => `${item.name} - Rs ${item.price}`).join("\n");
+      const total = cart.reduce((sum, item) => sum + item.price, 0);
+      const finalMessage = `🛍️ My Cart:\n${message}\n\nTotal: Rs ${total}`;
+      const phoneNumber = "923001234567"; // apna WhatsApp number likho
+      const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(finalMessage)}`;
+      window.open(url, "_blank");
+    }
+  </script>
+
 </body>
 </html>
