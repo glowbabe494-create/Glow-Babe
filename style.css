@@ -29,8 +29,12 @@ nav a:hover { color:#e91e63; }
 .close-btn:hover { color:#c2185b; transform:rotate(90deg); }
 
 .cart-panel ul { list-style:none; padding:0; }
-.cart-panel li { display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid #eee; }
-.cart-panel button { margin-top:10px; padding:10px; border:none; border-radius:6px; cursor:pointer; transition:0.3s; }
+.cart-panel li { display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid #eee; }
+.cart-item-info { display:flex; align-items:center; gap:10px; }
+.cart-item-info img { width:50px; height:50px; object-fit:cover; border-radius:6px; }
+.quantity-controls { display:flex; align-items:center; gap:5px; }
+.quantity-controls button { background:#e91e63; color:#fff; border:none; padding:4px 8px; border-radius:4px; cursor:pointer; }
+
 .cart-buttons { display:flex; justify-content:space-between; gap:10px; margin-top:15px; }
 .cart-buttons button:first-child { background:#e91e63; color:#fff; }
 .cart-buttons button:last-child { background:#4caf50; color:#fff; }
