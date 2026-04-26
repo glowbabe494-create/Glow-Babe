@@ -83,14 +83,26 @@ footer {
 .footer-middle a { text-decoration:none; color:#333; }
 .footer-middle a:hover { color:#e91e63; }
 
+.social-icons {
+  margin-top:15px; /* thoda niche spacing */
+  display:flex;
+  justify-content:center;
+  gap:20px;
+}
 .social-icons img {
-  height:30px;
-  margin:0 10px;
-  transition:0.3s;
+  height:40px;
+  width:40px;
+  border-radius:50%; /* icons ko rounded unique look */
+  background:#fff;
+  padding:5px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  transition:transform 0.3s, box-shadow 0.3s;
 }
 .social-icons img:hover {
   transform:scale(1.2);
+  box-shadow:0 4px 12px rgba(0,0,0,0.3);
 }
+
 
 .payment-icons {
   text-align:center;
