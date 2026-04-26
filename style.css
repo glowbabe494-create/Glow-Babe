@@ -1,7 +1,8 @@
 body { margin:0; font-family:Arial,sans-serif; background:#f9f9f9; color:#333; }
 header { background:#fff; padding:20px; display:flex; justify-content:space-between; align-items:center; box-shadow:0 2px 5px rgba(0,0,0,0.1); }
 header h1 { color:#e91e63; font-size:24px; font-weight:bold; }
-nav a { margin:0 10px; text-decoration:none; color:#555; font-weight:500; }
+nav { display:flex; align-items:center; gap:15px; }
+nav a { text-decoration:none; color:#555; font-weight:500; }
 nav a:hover { color:#e91e63; }
 .hero { background:#f8bbd0; text-align:center; padding:40px 20px; }
 .hero img { max-width:100%; border-radius:8px; margin-bottom:20px; }
@@ -16,13 +17,14 @@ nav a:hover { color:#e91e63; }
 .product p { color:#777; }
 .product button { margin-top:10px; padding:10px 20px; background:#e91e63; color:#fff; border:none; border-radius:6px; cursor:pointer; }
 .product button:hover { background:#d81b60; }
-.cart { max-width:600px; margin:40px auto; background:#fff; padding:20px; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1); }
-.cart h2 { margin-bottom:20px; font-size:24px; }
-.cart ul { list-style:none; padding:0; }
-.cart li { display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid #eee; }
-.cart button { background:#f44336; border:none; color:#fff; padding:6px 12px; border-radius:4px; cursor:pointer; }
-.cart button:hover { background:#d32f2f; }
-.checkout { margin-top:20px; padding:12px; background:#4caf50; color:#fff; border:none; border-radius:6px; cursor:pointer; width:100%; font-size:16px; }
+.cart-icon { position:relative; cursor:pointer; }
+.cart-dropdown { display:none; position:absolute; right:0; top:30px; background:#fff; border:1px solid #ddd; padding:15px; width:250px; box-shadow:0 2px 5px rgba(0,0,0,0.2); border-radius:6px; }
+.cart-dropdown h3 { margin:0 0 10px; }
+.cart-dropdown ul { list-style:none; padding:0; margin:0; max-height:150px; overflow-y:auto; }
+.cart-dropdown li { display:flex; justify-content:space-between; padding:5px 0; border-bottom:1px solid #eee; }
+.cart-dropdown button { background:#f44336; border:none; color:#fff; padding:4px 8px; border-radius:4px; cursor:pointer; }
+.cart-dropdown button:hover { background:#d32f2f; }
+.checkout { margin-top:10px; padding:8px; background:#4caf50; color:#fff; border:none; border-radius:6px; cursor:pointer; width:100%; }
 .checkout:hover { background:#388e3c; }
 footer { background:#333; color:#fff; text-align:center; padding:20px; margin-top:40px; }
 footer a { color:#e91e63; margin:0 10px; text-decoration:none; }
