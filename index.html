@@ -15,7 +15,7 @@
       <a href="#">Home</a>
       <a href="#">Shop</a>
       <a href="#">Contact</a>
-      <div class="cart-icon" onclick="toggleCart()">
+      <div class="cart-icon" onclick="toggleCart(true)">
         🛒 <span id="cart-count">0</span>
       </div>
     </nav>
@@ -53,7 +53,10 @@
 
   <!-- Side Cart Panel -->
   <div id="cart-panel" class="cart-panel">
-    <h2>🛒 My Cart</h2>
+    <div class="cart-header">
+      <h2>🛒 My Cart</h2>
+      <span class="close-btn" onclick="toggleCart(false)">✖</span>
+    </div>
     <ul id="cart-items"></ul>
     <h3 id="total">Total: Rs 0</h3>
     <div class="cart-buttons">
@@ -65,3 +68,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
