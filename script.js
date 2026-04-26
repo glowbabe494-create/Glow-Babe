@@ -17,12 +17,18 @@ function renderCart() {
     cartItems.innerHTML += `
       <li>
         ${item.name} - Rs ${item.price}
-        <button onclick="removeFromCart(${i})">Remove</button>
+        <button onclick="removeFromCart(${i})">X</button>
       </li>
     `;
   });
   const total = cart.reduce((sum, item) => sum + item.price, 0);
   document.getElementById('total').innerText = 'Total: Rs ' + total;
+  document.getElementById('cart-count').innerText = cart.length;
+}
+
+function toggleCart() {
+  const dropdown = document.getElementById('cart-dropdown');
+  dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
 }
 
 function checkoutWhatsApp() {
