@@ -37,4 +37,11 @@ function renderCart() {
   });
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
   document.getElementById('total').innerText = 'Total: Rs ' + total;
-  document.getElementById('cart-count').innerText =
+  document.getElementById('cart-count').innerText = cart.length;
+}
+
+function toggleCart(open) {
+  const panel = document.getElementById('cart-panel');
+  if (open) panel.classList.add('active');
+  else panel.classList.remove('active');
+}
