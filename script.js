@@ -27,12 +27,12 @@ function renderCart() {
   document.getElementById('cart-count').innerText = cart.length;
 }
 
-function toggleCart(forceOpen = false) {
+function toggleCart(open) {
   const panel = document.getElementById('cart-panel');
-  if (forceOpen) {
+  if (open) {
     panel.classList.add('active');
   } else {
-    panel.classList.toggle('active');
+    panel.classList.remove('active');
   }
 }
 
