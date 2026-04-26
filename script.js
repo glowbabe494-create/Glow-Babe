@@ -1,13 +1,19 @@
 let cart = [];
 
-function addToCart(name, price) {
-  cart.push({ name, price });
+function addToCart(name, price, image) {
+  const existing = cart.find(item => item.name === name);
+  if (existing) {
+    existing.quantity++;
+  } else {
+    cart.push({ name, price, image, quantity: 1 });
+  }
   renderCart();
-  toggleCart(true); // open cart when item added
+  toggleCart(true);
 }
 
-function removeFromCart(index) {
-  cart.splice(index, 1);
+function updateQuantity(index, change) {
+  cart[index].quantity += change;
+  if (cart[index].quantity <= 0) cart.splice(index, 1);
   renderCart();
 }
 
@@ -17,37 +23,18 @@ function renderCart() {
   cart.forEach((item, i) => {
     cartItems.innerHTML += `
       <li>
-        ${item.name} - Rs ${item.price}
-        <button onclick="removeFromCart(${i})">X</button>
+        <div class="cart-item-info">
+          <img src="${item.image}" alt="${item.name}">
+          <span>${item.name} - Rs ${item.price}</span>
+        </div>
+        <div class="quantity-controls">
+          <button onclick="updateQuantity(${i}, -1)">-</button>
+          <span>${item.quantity}</span>
+          <button onclick="updateQuantity(${i}, 1)">+</button>
+        </div>
       </li>
     `;
   });
-  const total = cart.reduce((sum, item) => sum + item.price, 0);
+  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
   document.getElementById('total').innerText = 'Total: Rs ' + total;
-  document.getElementById('cart-count').innerText = cart.length;
-}
-
-function toggleCart(open) {
-  const panel = document.getElementById('cart-panel');
-  if (open) {
-    panel.classList.add('active');
-  } else {
-    panel.classList.remove('active');
-  }
-}
-
-function goToCart() {
-  alert("Go to cart page (future implementation).");
-}
-
-function checkoutWhatsApp() {
-  if (cart.length === 0) {
-    alert("Cart is empty!");
-    return;
-  }
-  const message = cart.map(item => `${item.name} - Rs ${item.price}`).join("\n");
-  const total = cart.reduce((sum, item) => sum + item.price, 0);
-  const notes = document.getElementById('order-notes').value;
-  const finalMessage = `🛍️ My Cart:\n${message}\n\nTotal: Rs ${total}\nNotes: ${notes}`;
-  const phoneNumber = "923001234567"; // apna WhatsApp number likho
-  const url = `
+  document.getElementById('cart-count').innerText =
