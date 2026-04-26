@@ -47,8 +47,7 @@ function checkoutWhatsApp() {
   }
   const message = cart.map(item => `${item.name} - Rs ${item.price}`).join("\n");
   const total = cart.reduce((sum, item) => sum + item.price, 0);
-  const finalMessage = `🛍️ My Cart:\n${message}\n\nTotal: Rs ${total}`;
+  const notes = document.getElementById('order-notes').value;
+  const finalMessage = `🛍️ My Cart:\n${message}\n\nTotal: Rs ${total}\nNotes: ${notes}`;
   const phoneNumber = "923001234567"; // apna WhatsApp number likho
-  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(finalMessage)}`;
-  window.open(url, "_blank");
-}
+  const url = `
