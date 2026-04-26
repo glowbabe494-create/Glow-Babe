@@ -83,14 +83,14 @@ footer {
 .footer-middle a { text-decoration:none; color:#333; }
 .footer-middle a:hover { color:#e91e63; }
 
-.social-icons a {
-  display:inline-block;
-  margin:5px 10px;
-  text-decoration:none;
-  color:#e91e63;
-  font-weight:bold;
+.social-icons img {
+  height:30px;
+  margin:0 10px;
+  transition:0.3s;
 }
-.social-icons a:hover { color:#c2185b; }
+.social-icons img:hover {
+  transform:scale(1.2);
+}
 
 .payment-icons {
   text-align:center;
