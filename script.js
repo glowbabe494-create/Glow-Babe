@@ -3,6 +3,7 @@ let cart = [];
 function addToCart(name, price) {
   cart.push({ name, price });
   renderCart();
+  toggleCart(true); // open cart when item added
 }
 
 function removeFromCart(index) {
@@ -26,9 +27,17 @@ function renderCart() {
   document.getElementById('cart-count').innerText = cart.length;
 }
 
-function toggleCart() {
-  const dropdown = document.getElementById('cart-dropdown');
-  dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+function toggleCart(forceOpen = false) {
+  const panel = document.getElementById('cart-panel');
+  if (forceOpen) {
+    panel.classList.add('active');
+  } else {
+    panel.classList.toggle('active');
+  }
+}
+
+function goToCart() {
+  alert("Go to cart page (future implementation).");
 }
 
 function checkoutWhatsApp() {
