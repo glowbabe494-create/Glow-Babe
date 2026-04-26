@@ -50,4 +50,7 @@ function checkoutWhatsApp() {
   const notes = document.getElementById('order-notes').value;
   const finalMessage = `🛍️ My Cart:\n${message}\n\nTotal: Rs ${total}\nNotes: ${notes}`;
   const phoneNumber = "923001234567"; // apna WhatsApp number likho
-  const url = `
+  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(finalMessage)}`;
+  window.open(url, "_blank");
+}
+
