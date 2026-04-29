@@ -26,6 +26,12 @@ function renderCart() {
   document.getElementById('total').innerText = 'Total: Rs ' + total;
   document.getElementById('cart-count').innerText = cart.length;
 }
+const cartCount = document.getElementById('cart-count');
+cartCount.innerText = cart.length;
+
+// bounce animation
+cartCount.classList.add("bounce");
+setTimeout(() => cartCount.classList.remove("bounce"), 500);
 
 function toggleCart(open) {
   const panel = document.getElementById('cart-panel');
