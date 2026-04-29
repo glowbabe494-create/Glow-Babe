@@ -30,49 +30,44 @@
 </section>
 
 
-  <!-- Products -->
-  <section class="products">
-    <div class="product">
-      <img src="assets/lipstick.jpg" alt="Lipstick">
-      <h3>Lipstick</h3>
-      <p>Rs 1200</p>
-      <button onclick="addToCart('Lipstick', 1200)">Add to Cart</button>
-    </div>
-    <div class="product">
-      <img src="assets/perfume.jpg" alt="Perfume">
-      <h3>Perfume</h3>
-      <p>Rs 3500</p>
-      <button onclick="addToCart('Perfume', 3500)">Add to Cart</button>
-    </div>
-    <div class="product">
-      <img src="assets/watch.jpg" alt="Watch">
-      <h3>Watch</h3>
-      <p>Rs 5000</p>
-      <button onclick="addToCart('Watch', 5000)">Add to Cart</button>
-    </div>
+<!-- Products -->
+<section class="products">
+  <div class="product">
+    <img src="assets/lipstick.jpg" alt="Lipstick">
+    <h3>Lipstick</h3>
+    <p>Rs 1200</p>
+    <button class="add-to-cart" onclick="addToCart('Lipstick', 1200)">Add to Cart</button>
+  </div>
+  <div class="product">
+    <img src="assets/perfume.jpg" alt="Perfume">
+    <h3>Perfume</h3>
+    <p>Rs 3500</p>
+    <button class="add-to-cart" onclick="addToCart('Perfume', 3500)">Add to Cart</button>
+  </div>
+  <div class="product">
+    <img src="assets/watch.jpg" alt="Watch">
+    <h3>Watch</h3>
+    <p>Rs 5000</p>
+    <button class="add-to-cart" onclick="addToCart('Watch', 5000)">Add to Cart</button>
+  </div>
+  </div>
      <div class="product">
       <img src="assets/bag.jpg" alt="luxury handbag">
       <h3>luxury handbag</h3>
       <p>Rs 3995</p>
       <button onclick="addToCart('luxury handbag', 3995)">Add to Cart</button>
     </div>
-  </section>
-  
+</section>
 
-  <!-- Side Cart Panel -->
-  <div id="cart-panel" class="cart-panel">
-    <div class="cart-header">
-      <h2>🛒 My Cart</h2>
-      <span class="close-btn" onclick="toggleCart(false)">✖</span>
-    </div>
-    <ul id="cart-items"></ul>
-    <h3 id="total">Total: Rs 0</h3>
-    <textarea id="order-notes" placeholder="Order notes..."></textarea>
-    <div class="cart-buttons">
-     <button class="add-to-cart" onclick="addToCart('Lipstick', 1200)">Add to Cart</button>
-      <button onclick="checkoutWhatsApp()">Checkout</button>
-    </div>
-  </div>
+<!-- Cart Panel -->
+<div id="cart-panel">
+  <h2>My Cart</h2>
+  <ul id="cart-items"></ul>
+  <p id="total">Total: Rs 0</p>
+  <textarea id="order-notes" placeholder="Add notes for your order..."></textarea>
+  <button onclick="goToCart()">Go to Cart</button>
+  <button onclick="checkoutWhatsApp()">Checkout via WhatsApp</button>
+</div>
 
   <script src="script.js"></script>
 </body>
