@@ -38,7 +38,7 @@ function confirmOrder() {
     `🏠 Address: ${address}, ${city}, ${postal}\n💳 Payment: ${payment}\n\n` +
     `📦 Order:\n${message}\n\n💰 Total: Rs ${total}`;
 
-  let phoneNumber = "923194455289";
+  let phoneNumber = "923194455289"; // ✅ correct format
   let url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(finalMessage)}`;
   window.open(url, "_blank");
 
