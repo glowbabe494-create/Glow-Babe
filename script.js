@@ -91,7 +91,7 @@ function checkoutWhatsApp() {
   let notes = document.getElementById('order-notes').value;
   let finalMessage = `🛍️ GlowBabe Order\n\n${message}\n\n💰 Total: Rs ${total}\n📝 Notes: ${notes}`;
   let phoneNumber = "923194455289";
-  let url = `https://wa.me/${923194455289}?text=${encodeURIComponent(finalMessage)}`;
+  let url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(finalMessage)}`;
   window.open(url, "_blank");
 
   alert("✅ Thank you for shopping with GlowBabe! Your order has been sent to WhatsApp.");
