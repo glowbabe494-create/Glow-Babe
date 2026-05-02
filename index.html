@@ -10,119 +10,112 @@
 
   <!-- Header -->
   <header>
-    <h1>GlowBabe</h1>
+    <h1 class="logo">GlowBabe</h1>
     <nav>
-      <a href="#">Home</a>
-      <a href="#">Shop</a>
-      <a href="#contact">Contact</a>
-      <div class="cart-icon" onclick="toggleCart(true)">
-        🛒 <span id="cart-count">0</span>
-      </div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li>
+          <a href="#">Shop ▼</a>
+          <ul class="dropdown">
+            <li><a href="#">Rings</a></li>
+            <li><a href="#">Cosmetics</a></li>
+            <li><a href="#">Bags</a></li>
+            <li><a href="#">Accessories</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="cart-icon" onclick="toggleCart(true)">
+          🛒 <span id="cart-count">0</span>
+        </li>
+      </ul>
     </nav>
   </header>
 
   <!-- Hero Banner -->
-<section class="hero">
-  <img src="assets/banner.jpg" alt="Banner">
-  <h2>Welcome to GlowBabe</h2>
-  <p>Luxury beauty & accessories at your fingertips</p>
-  <button>Shop Now</button>
-</section>
-
-
-<!-- Products -->
-<section class="products">
-  <div class="product">
-    <img src="assets/lipstick.jpg" alt="Lipstick">
-    <h3>Lipstick</h3>
-    <p>Rs 1200</p>
-    <button class="add-to-cart" onclick="addToCart('Lipstick', 1200)">Add to Cart</button>
-  </div>
-  <div class="product">
-    <img src="assets/perfume.jpg" alt="Perfume">
-    <h3>Perfume</h3>
-    <p>Rs 3500</p>
-    <button class="add-to-cart" onclick="addToCart('Perfume', 3500)">Add to Cart</button>
-  </div>
-  <div class="product">
-    <img src="assets/watch.jpg" alt="Watch">
-    <h3>Watch</h3>
-    <p>Rs 5000</p>
-    <button class="add-to-cart" onclick="addToCart('Watch', 5000)">Add to Cart</button>
-  </div>
-  </div>
-     <div class="product">
-      <img src="assets/bag.jpg" alt="luxury handbag">
-      <h3>luxury handbag</h3>
-      <p>Rs 3995</p>
-      <button onclick="addToCart('luxury handbag', 3995)">Add to Cart</button>
+  <section class="hero">
+    <div class="hero-overlay">
+      <h2>Welcome to GlowBabe</h2>
+      <p>Luxury beauty & accessories at your fingertips</p>
+      <button>Shop Now</button>
     </div>
-</section>
+  </section>
 
-<!-- Cart Panel -->
-<div id="cart-panel">
-  <h2>My Cart</h2>
-  <ul id="cart-items"></ul>
-  <p id="total">Total: Rs 0</p>
-  <textarea id="order-notes" placeholder="Add notes for your order..."></textarea>
-  <button onclick="goToCart()">Go to Cart</button>
-  <button onclick="checkoutWhatsApp()">Checkout via WhatsApp</button>
-</div>
+  <!-- Products -->
+  <section class="products">
+    <div class="product">
+      <img src="assets/lipstick.jpg" alt="Lipstick">
+      <h3>Lipstick</h3>
+      <p>Rs 1200</p>
+      <button onclick="addToCart('Lipstick', 1200)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="assets/perfume.jpg" alt="Perfume">
+      <h3>Perfume</h3>
+      <p>Rs 3500</p>
+      <button onclick="addToCart('Perfume', 3500)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="assets/watch.jpg" alt="Watch">
+      <h3>Watch</h3>
+      <p>Rs 5000</p>
+      <button onclick="addToCart('Watch', 5000)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="assets/bag.jpg" alt="Luxury Handbag">
+      <h3>Luxury Handbag</h3>
+      <p>Rs 3995</p>
+      <button onclick="addToCart('Luxury Handbag', 3995)">Add to Cart</button>
+    </div>
+  </section>
+
+  <!-- Cart Panel -->
+  <div id="cart-panel">
+    <h2>My Cart</h2>
+    <ul id="cart-items"></ul>
+    <p id="total">Total: Rs 0</p>
+    <textarea id="order-notes" placeholder="Add notes for your order..."></textarea>
+    <button onclick="goToCart()">Go to Cart</button>
+    <button onclick="checkoutWhatsApp()">Checkout via WhatsApp</button>
+  </div>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="footer-container">
+      <div class="footer-left">
+        <h2>GlowBabe</h2>
+        <p>Luxury beauty & accessories</p>
+        <p><strong>Address:</strong> Lahore, Punjab, Pakistan</p>
+        <p><strong>Phone:</strong> +92 314 6604294 </p>
+        <p><strong>Email:</strong> glowbabe494@gmail.com</p>
+      </div>
+      <div class="footer-middle">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+      </div>
+      <div class="footer-right">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#"><img src="assets/instagram.png" alt="Instagram"></a>
+          <a href="#"><img src="assets/facebook.png" alt="Facebook"></a>
+          <a href="https://wa.me/923146604294"><img src="assets/whatsapp.png" alt="WhatsApp"></a>
+          <a href="#"><img src="assets/snapchat.png" alt="Snapchat"></a>
+        </div>
+      </div>
+    </div>
+    <div class="payment-icons">
+      <img src="assets/visa.png" alt="Visa">
+      <img src="assets/mastercard.png" alt="Mastercard">
+      <img src="assets/easypaisa.png" alt="Easypaisa">
+      <img src="assets/jazzcash.png" alt="JazzCash">
+    </div>
+    <p class="footer-bottom">© 2026 GlowBabe. All Rights Reserved.</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
-<!-- Footer -->
-<footer id="contact">
-  <div class="footer-container">
-    <!-- Left Column -->
-    <div class="footer-left">
-      <h2>GlowBabe</h2>
-      <p>Luxury beauty & accessories</p>
-      <p><strong>Address:</strong> Lahore, Punjab, Pakistan</p>
-      <p><strong>Phone:</strong> +92 314 6604294 </p>
-      <p><strong>Email:</strong> gowbabe494@gmail.com</p>
-    </div>
-
-    <!-- Middle Column -->
-    <div class="footer-middle">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Shop</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">FAQs</a></li>
-      </ul>
-    </div>
-
-    <!-- Right Column -->
-    <div class="footer-right">
-      <h3>Follow Us</h3>
-      <div class="social-icons">
-        <a href="https://instagram.com/yourlink" target="_blank">
-          <img src="assets/instagram.png" alt="Instagram">
-        </a>
-        <a href="https://facebook.com/yourlink" target="_blank">
-          <img src="assets/facebook.png" alt="Facebook">
-        </a>
-        <a href="https://wa.me/923146604294" target="_blank">
-          <img src="assets/whatsapp.png" alt="WhatsApp">
-        </a>
-        <a href="https://snapchat.com/yourlink" target="_blank">
-          <img src="assets/snapchat.png" alt="Snapchat">
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Payment Icons -->
-  <div class="payment-icons">
-    <img src="assets/visa.png" alt="Visa">
-    <img src="assets/mastercard.png" alt="Mastercard">
-    <img src="assets/easypaisa.png" alt="Easypaisa">
-    <img src="assets/jazzcash.png" alt="JazzCash">
-  </div>
-
-  <p class="footer-bottom">© 2026 GlowBabe. All Rights Reserved.</p>
-</footer>
-
