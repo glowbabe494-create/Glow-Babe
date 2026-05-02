@@ -1,15 +1,15 @@
 let cart = [];
 
-// Add item to cart (with quantity check)
+// Add item to cart (with quantity system)
 function addToCart(name, price) {
   let existing = cart.find(item => item.name === name);
   if (existing) {
-    existing.qty += 1;
+    existing.qty += 1; // agar same item hai to qty increase
   } else {
     cart.push({ name, price, qty: 1 });
   }
   renderCart();
-  toggleCart(true); // open cart when item added
+  toggleCart(true);
 }
 
 // Remove item from cart
@@ -18,15 +18,19 @@ function removeFromCart(index) {
   renderCart();
 }
 
-// Render cart items
+// Render cart items with premium look
 function renderCart() {
   const cartItems = document.getElementById('cart-items');
   cartItems.innerHTML = '';
   cart.forEach((item, i) => {
     cartItems.innerHTML += `
-      <li>
-        ${item.name} (x${item.qty}) - Rs ${item.price * item.qty}
-        <button onclick="removeFromCart(${i})">X</button>
+      <li class="cart-item">
+        <div class="item-info">
+          <span class="item-name">${item.name}</span>
+          <span class="item-qty">x${item.qty}</span>
+        </div>
+        <div class="item-price">Rs ${item.price * item.qty}</div>
+        <button class="remove-btn" onclick="removeFromCart(${i})">✖</button>
       </li>
     `;
   });
@@ -52,11 +56,6 @@ function toggleCart(open) {
   }
 }
 
-// Go to cart (future page)
-function goToCart() {
-  alert("Go to cart page (future implementation).");
-}
-
 // Checkout via WhatsApp
 function checkoutWhatsApp() {
   if (cart.length === 0) {
@@ -67,10 +66,9 @@ function checkoutWhatsApp() {
   let total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
   let notes = document.getElementById('order-notes').value;
   let finalMessage = `🛍️ GlowBabe Order\n\n${message}\n\n💰 Total: Rs ${total}\n📝 Notes: ${notes}`;
-  let phoneNumber = "923146604294"; // tumhara WhatsApp number
+  let phoneNumber = "923146604294";
   let url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(finalMessage)}`;
   window.open(url, "_blank");
 
-  // Confirmation popup
-  alert("✅ Thank you for shopping with GlowBabe! Your order details have been sent to WhatsApp.");
+  alert("✅ Thank you for shopping with GlowBabe! Your order has been sent to WhatsApp.");
 }
