@@ -70,12 +70,16 @@
 
   <!-- Cart Panel -->
   <div id="cart-panel">
-    <h2>My Cart</h2>
+    <div class="cart-header">
+      <h2>My Cart</h2>
+      <span class="close-btn" onclick="toggleCart(false)">✖</span>
+    </div>
     <ul id="cart-items"></ul>
     <p id="total">Total: Rs 0</p>
     <textarea id="order-notes" placeholder="Add notes for your order..."></textarea>
-    <button onclick="goToCart()">Go to Cart</button>
-    <button onclick="checkoutWhatsApp()">Checkout via WhatsApp</button>
+    <div class="cart-buttons">
+      <button class="checkout-btn" onclick="checkoutPage()">Checkout</button>
+    </div>
   </div>
 
   <!-- Footer -->
