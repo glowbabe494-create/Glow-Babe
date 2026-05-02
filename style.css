@@ -184,6 +184,41 @@ nav ul li:hover .dropdown {
   color: #c2185b;
   transform: rotate(90deg);
 }
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8bbd0;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.item-info {
+  display: flex;
+  gap: 8px;
+  font-weight: bold;
+  color: #c2185b;
+}
+.item-price {
+  font-weight: 600;
+  color: #333;
+}
+.remove-btn {
+  background: #e91e63;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.remove-btn:hover {
+  background: #c2185b;
+  transform: rotate(90deg);
+}
+
 
 /* Footer */
 footer {
