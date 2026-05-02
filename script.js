@@ -18,7 +18,7 @@ function removeFromCart(index) {
   renderCart();
 }
 
-// Render cart items with premium look
+// Render cart items with quantity
 function renderCart() {
   const cartItems = document.getElementById('cart-items');
   cartItems.innerHTML = '';
