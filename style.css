@@ -187,7 +187,6 @@ nav ul li:hover .dropdown {
 }
 
 /* Cart Item */
-/* Cart Item */
 .cart-item {
   display: flex;
   align-items: center;
@@ -198,7 +197,6 @@ nav ul li:hover .dropdown {
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
-
 .cart-thumb {
   width: 50px;
   height: 50px;
@@ -207,14 +205,9 @@ nav ul li:hover .dropdown {
   margin-right: 10px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
-
 .item-info {
   flex: 1;
   margin-left: 10px;
-  font-weight: bold;
-  color: #c2185b;
-}
-.item-info {
   display: flex;
   flex-direction: column;
   font-weight: bold;
@@ -330,16 +323,4 @@ nav ul li:hover .dropdown {
 /* Confirm Button */
 .confirm-btn {
   margin-top: 25px;
-  width: 100%;
-  padding: 16px;
-  background: linear-gradient(45deg, #4caf50, #81c784);
-  color: #fff;
-  border: none;
-  border-radius: 30px;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.confirm-btn:hover {
-  transform
+  width: 100
