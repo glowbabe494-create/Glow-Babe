@@ -26,6 +26,7 @@ function renderCart() {
   cart.forEach((item, i) => {
     cartItems.innerHTML += `
       <li class="cart-item">
+        <img src="${item.image}" alt="${item.name}" class="cart-thumb">
         <div class="item-info">
           <span class="item-name">${item.name}</span>
           <span class="item-qty">x${item.qty}</span>
@@ -35,6 +36,17 @@ function renderCart() {
       </li>
     `;
   });
+
+  const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+  document.getElementById('total').innerText = 'Total: Rs ' + total;
+
+  const cartCount = document.getElementById('cart-count');
+  cartCount.innerText = cart.reduce((sum, item) => sum + item.qty, 0);
+
+  cartCount.classList.add("bounce");
+  setTimeout(() => cartCount.classList.remove("bounce"), 500);
+}
+
 
   const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
   document.getElementById('total').innerText = 'Total: Rs ' + total;
