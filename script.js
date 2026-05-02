@@ -56,7 +56,18 @@ function toggleCart(open) {
   }
 }
 
-// Checkout via WhatsApp
+// Go to checkout page
+function checkoutPage() {
+  if (cart.length === 0) {
+    alert("Cart is empty!");
+    return;
+  }
+  // Save cart in localStorage for checkout page
+  localStorage.setItem("glowbabeCart", JSON.stringify(cart));
+  window.location.href = "checkout.html";
+}
+
+// Checkout via WhatsApp (direct from cart panel)
 function checkoutWhatsApp() {
   if (cart.length === 0) {
     alert("Cart is empty!");
