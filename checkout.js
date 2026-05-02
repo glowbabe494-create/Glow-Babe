@@ -39,7 +39,7 @@ function confirmOrder() {
     `📦 Order:\n${message}\n\n💰 Total: Rs ${total}`;
 
   let phoneNumber = "923194455289";
-  let url = `https://wa.me/${923194455289}?text=${encodeURIComponent(finalMessage)}`;
+  let url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(finalMessage)}`;
   window.open(url, "_blank");
 
   alert("✅ Thank you for shopping with GlowBabe! Your order has been confirmed and sent to WhatsApp.");
