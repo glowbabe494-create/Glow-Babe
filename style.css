@@ -331,6 +331,7 @@ nav ul li:hover .dropdown {
 }
 
 /* Footer */
+/* Footer */
 footer {
   background: #fff;
   padding: 40px 20px;
@@ -371,7 +372,7 @@ footer {
   gap: 12px;
 }
 .social-icons img {
-  width: 28px;   /* ✅ compact size */
+  width: 28px;   /* ✅ compact fixed size */
   height: 28px;
   object-fit: contain;
   transition: transform 0.3s;
@@ -388,7 +389,7 @@ footer {
   margin-top: 20px;
 }
 .payment-icons img {
-  width: 36px;   /* ✅ compact size */
+  width: 36px;   /* ✅ compact fixed size */
   height: auto;
 }
 
@@ -399,4 +400,3 @@ footer {
   color: #777;
   font-size: 14px;
 }
-
