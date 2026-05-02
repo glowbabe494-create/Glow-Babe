@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GlowBabe Checkout</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <section class="checkout-container">
+    <h2>Checkout</h2>
+
+    <!-- Customer Info -->
+    <div class="checkout-form">
+      <h3>Contact Information</h3>
+      <input type="email" id="email" placeholder="Email" required>
+      <label><input type="checkbox" id="newsletter"> Email me with news and offers</label>
+
+      <h3>Delivery Details</h3>
+      <input type="text" id="fname" placeholder="First Name" required>
+      <input type="text" id="lname" placeholder="Last Name" required>
+      <input type="text" id="address" placeholder="Address" required>
+      <input type="text" id="city" placeholder="City" required>
+      <input type="text" id="postal" placeholder="Postal Code (optional)">
+      <input type="text" id="phone" placeholder="Phone" required>
+
+      <h3>Payment Method</h3>
+      <select id="payment">
+        <option value="COD">Cash on Delivery</option>
+        <option value="Card">Credit/Debit Card</option>
+      </select>
+    </div>
+
+    <!-- Order Summary -->
+    <div class="order-summary">
+      <h3>Order Summary</h3>
+      <ul id="summary-items"></ul>
+      <p id="summary-total">Total: Rs 0</p>
+    </div>
+
+    <!-- Confirm Button -->
+    <button class="confirm-btn" onclick="confirmOrder()">Confirm Order</button>
+  </section>
+
+  <script src="checkout.js"></script>
+</body>
+</html>
 
