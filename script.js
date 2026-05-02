@@ -1,16 +1,17 @@
 let cart = [];
 
 // Add item to cart (with quantity system)
-function addToCart(name, price) {
+function addToCart(name, price, image) {
   let existing = cart.find(item => item.name === name);
   if (existing) {
-    existing.qty += 1; // agar same item hai to qty increase
+    existing.qty += 1;
   } else {
-    cart.push({ name, price, qty: 1 });
+    cart.push({ name, price, qty: 1, image: image });
   }
   renderCart();
   toggleCart(true);
 }
+
 
 // Remove item from cart
 function removeFromCart(index) {
