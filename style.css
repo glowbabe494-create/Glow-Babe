@@ -157,14 +157,15 @@ nav ul li:hover .dropdown {
   position: fixed;
   right: -400px;
   top: 0;
-  width: 350px;
+  width: 360px;
   height: 100%;
   background: #fff;
-  box-shadow: -4px 0 15px rgba(0,0,0,0.3);
+  box-shadow: -4px 0 20px rgba(0,0,0,0.25);
   padding: 20px;
   transition: right 0.4s ease-in-out;
   overflow-y: auto;
   z-index: 1000;
+  border-left: 4px solid #e91e63;
 }
 #cart-panel.active {
   right: 0;
@@ -173,10 +174,16 @@ nav ul li:hover .dropdown {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 15px;
+}
+.cart-header h2 {
+  color: #c2185b;
+  font-size: 22px;
+  font-weight: bold;
 }
 .close-btn {
   cursor: pointer;
-  font-size: 20px;
+  font-size: 22px;
   color: #e91e63;
   transition: 0.3s;
 }
@@ -184,21 +191,30 @@ nav ul li:hover .dropdown {
   color: #c2185b;
   transform: rotate(90deg);
 }
+
+/* Cart Item */
 .cart-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: #f8bbd0;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 .item-info {
   display: flex;
-  gap: 8px;
+  flex-direction: column;
   font-weight: bold;
   color: #c2185b;
+}
+.item-name {
+  font-size: 16px;
+}
+.item-qty {
+  font-size: 14px;
+  color: #555;
 }
 .item-price {
   font-weight: 600;
@@ -217,6 +233,46 @@ nav ul li:hover .dropdown {
 .remove-btn:hover {
   background: #c2185b;
   transform: rotate(90deg);
+}
+
+/* Cart Buttons */
+.cart-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+}
+.cart-buttons button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.cart-buttons button:first-child {
+  background: #e91e63;
+  color: #fff;
+}
+.cart-buttons button:last-child {
+  background: #4caf50;
+  color: #fff;
+}
+.cart-buttons button:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+/* Notes Box */
+#order-notes {
+  width: 100%;
+  min-height: 80px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 15px;
+  font-size: 14px;
 }
 
 
