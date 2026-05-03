@@ -440,7 +440,7 @@ footer {
   font-size: 14px;
 }
 
-/* Cart Panel Default */
+/* Cart Panel Default (hidden) */
 #cart-panel {
   position: fixed;
   top: 0;
@@ -457,8 +457,9 @@ footer {
   transform: translateX(100%); /* ✅ hidden off-screen */
 }
 
+/* Active state */
 #cart-panel.active {
-  transform: translateX(0);   /* ✅ slide in */
+  transform: translateX(0);   /* ✅ slide in neatly */
 }
 
 /* Cart Header */
@@ -488,9 +489,11 @@ footer {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-  body {
-    overflow-x: hidden;   /* ✅ prevent horizontal scroll */
+  #cart-panel {
+    width: 100%;        /* ✅ full width on mobile */
+    height: 100%;       /* ✅ full height */
   }
+}
 
   .luxury-hero {
     flex-direction: column;
