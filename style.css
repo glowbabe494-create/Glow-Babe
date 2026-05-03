@@ -439,3 +439,54 @@ footer {
   color: #777;
   font-size: 14px;
 }
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .luxury-hero {
+    flex-direction: column;   /* ✅ stack text and image vertically */
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .hero-content {
+    max-width: 100%;          /* ✅ full width on mobile */
+  }
+
+  .hero-content h1 {
+    font-size: 28px;          /* ✅ smaller heading */
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .hero-btn {
+    font-size: 16px;
+    padding: 12px 24px;
+  }
+
+  .hero-images img {
+    max-width: 100%;          /* ✅ image fits screen */
+    max-height: 200px;
+  }
+
+  /* Products grid becomes single column */
+  .products {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  /* Cart panel width smaller on mobile */
+  #cart-panel {
+    width: 100%;
+    right: -100%;
+  }
+  #cart-panel.active {
+    right: 0;
+  }
+
+  /* Footer stacks vertically */
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
