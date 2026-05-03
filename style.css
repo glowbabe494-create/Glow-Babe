@@ -121,8 +121,8 @@ nav ul li:hover .dropdown {
 
 .hero-images img {
   width: auto;          /* ✅ prevent full stretch */
-  max-width: 480px;     /* ✅ normal width */
-  max-height: 340px;    /* ✅ normal height */
+  max-width: 580px;     /* ✅ normal width */
+  max-height: 440px;    /* ✅ normal height */
   object-fit: cover;    /* ✅ crop neatly */
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
