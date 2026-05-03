@@ -114,18 +114,19 @@ nav ul li:hover .dropdown {
 .hero-images {
   flex: 1;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .hero-images img {
-  max-width: 380px;   /* normal width */
-  max-height: 240px;  /* normal height */
-  object-fit: cover;  /* crop neatly */
+  width: auto;          /* ✅ prevent full stretch */
+  max-width: 380px;     /* ✅ normal width */
+  max-height: 240px;    /* ✅ normal height */
+  object-fit: cover;    /* ✅ crop neatly */
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
-
 
 .caption {
   margin-top: 10px;
