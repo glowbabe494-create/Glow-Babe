@@ -119,7 +119,7 @@ nav ul li:hover .dropdown {
 }
 
 .hero-images img {
-  max-width: 420px;   /* ✅ limit width */
+  max-width: 280px;   /* ✅ limit width */
   max-height: 280px;  /* ✅ limit height */
   object-fit: cover;  /* ✅ crop neatly */
   border-radius: 12px;
