@@ -440,99 +440,47 @@ footer {
   font-size: 14px;
 }
 
-/* Cart Panel (Desktop Default) */
+/* Cart Panel Default (Desktop) */
 #cart-panel {
   position: fixed;
-  right: -400px;
   top: 0;
-  width: 360px;
+  right: -400px;   /* slide from side */
+  width: 400px;
   height: 100%;
   background: #fff;
-  box-shadow: -4px 0 20px rgba(0,0,0,0.25);
-  padding: 20px;
-  transition: right 0.4s ease-in-out;
-  overflow-y: auto;
-  z-index: 1000;
-  border-left: 4px solid #e91e63;
+  box-shadow: -4px 0 15px rgba(0,0,0,0.2);
+  transition: right 0.3s ease;
+  z-index: 999;
 }
 
+/* Active state (Desktop) */
 #cart-panel.active {
   right: 0;
 }
 
-/* Cart Header */
-.cart-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.cart-header h2 {
-  color: #c2185b;
-  font-size: 22px;
-  font-weight: bold;
-}
-
-.close-btn {
-  cursor: pointer;
-  font-size: 22px;
-  color: #e91e63;
-  transition: 0.3s;
-}
-.close-btn:hover {
-  color: #c2185b;
-  transform: rotate(90deg);
-}
-
-/* Mobile Responsive Adjustments */
+/* Mobile Responsive */
 @media (max-width: 768px) {
-  .luxury-hero {
-    flex-direction: column;   /* ✅ stack text and image vertically */
-    text-align: center;
-    padding: 40px 20px;
-  }
-
-  .hero-content {
-    max-width: 100%;          /* ✅ full width on mobile */
-  }
-
-  .hero-content h1 {
-    font-size: 28px;          /* ✅ smaller heading */
-  }
-
-  .hero-content p {
-    font-size: 16px;
-  }
-
-  .hero-btn {
-    font-size: 16px;
-    padding: 12px 24px;
-  }
-
-  .hero-images img {
-    max-width: 100%;          /* ✅ image fits screen */
-    max-height: 200px;
-  }
-
-  /* Products grid becomes single column */
-  .products {
-    grid-template-columns: 1fr;
-    padding: 20px;
-  }
-
-  /* Cart panel width smaller on mobile */
   #cart-panel {
-    width: 100%;
-    right: -100%;
+    width: 100%;        /* ✅ full width */
+    right: -100%;       /* ✅ hide off-screen */
   }
   #cart-panel.active {
-    right: 0;
+    right: 0;           /* ✅ slide in fully */
   }
 
-  /* Footer stacks vertically */
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
+  .cart-item {
+    flex-direction: column;   /* ✅ stack items */
+    align-items: flex-start;
+  }
+
+  .item-info {
+    margin-bottom: 10px;
+  }
+
+  .checkout-btn {
+    width: 100%;        /* ✅ button full width */
+    font-size: 16px;
+    padding: 14px;
   }
 }
+
