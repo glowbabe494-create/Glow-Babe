@@ -96,7 +96,7 @@ nav ul li:hover .dropdown {
 
 .hero-btn {
   padding: 14px 28px;
-  background: linear-gradient(45deg, #d4af37, #b8860b); /* gold gradient */
+  background: linear-gradient(45deg, #d4af37, #b8860b);
   color: #fff;
   border: none;
   border-radius: 30px;
@@ -137,6 +137,7 @@ nav ul li:hover .dropdown {
   color: #777;
   font-style: italic;
 }
+
 
 /* Products Grid */
 .products {
