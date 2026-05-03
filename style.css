@@ -493,24 +493,25 @@ footer {
   }
 }
 
-/* Cart Panel (Desktop Default) */
+/* Cart Panel Default */
 #cart-panel {
   position: fixed;
-  right: -400px;
   top: 0;
-  width: 360px;
+  left: 0;
+  width: 360px;          /* desktop width */
   height: 100%;
   background: #fff;
   box-shadow: -4px 0 20px rgba(0,0,0,0.25);
   padding: 20px;
-  transition: right 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
   overflow-y: auto;
   z-index: 1000;
   border-left: 4px solid #e91e63;
+  transform: translateX(100%); /* ✅ hidden off-screen */
 }
 
 #cart-panel.active {
-  right: 0;
+  transform: translateX(0);   /* ✅ slide in */
 }
 
 /* Cart Header */
@@ -541,13 +542,8 @@ footer {
 /* ✅ Mobile Responsive */
 @media (max-width: 768px) {
   #cart-panel {
-    width: 100%;        /* full width */
-    right: -100%;       /* hide off-screen */
-    left: 0;            /* cover from left to right */
-  }
-  #cart-panel.active {
-    right: 0;
-    left: 0;            /* show full screen */
+    width: 100%;        /* full width on mobile */
+    height: 100%;       /* full height */
   }
 
   .checkout-btn {
