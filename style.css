@@ -111,6 +111,7 @@ nav ul li:hover .dropdown {
 }
 
 /* Hero Images - Single Image */
+/* Hero Images - Single Image Normal Size */
 .hero-images {
   flex: 1;
   display: flex;
@@ -119,13 +120,12 @@ nav ul li:hover .dropdown {
 }
 
 .hero-images img {
-  max-width: 280px;   /* ✅ limit width */
-  max-height: 280px;  /* ✅ limit height */
+  width: 100%;
+  max-width: 380px;   /* ✅ normal width */
+  max-height: 240px;  /* ✅ normal height */
   object-fit: cover;  /* ✅ crop neatly */
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  padding: 10px;
-  text-align: center;
 }
 
 .image-box img {
