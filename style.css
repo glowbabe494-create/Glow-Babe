@@ -84,26 +84,27 @@ nav ul li:hover .dropdown {
 }
 
 /* Right side images side-by-side */
+/* Hero Banner Images */
 .hero-images {
   flex: 1;
   display: flex;
-  gap: 20px;          /* ✅ spacing between images */
-  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .image-box {
-  flex: 1;            /* ✅ each image takes equal space */
-  max-width: 250px;   /* ✅ limit width */
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   padding: 10px;
   text-align: center;
+  max-width: 400px;   /* ✅ limit width */
+  margin: 0 auto;     /* ✅ center align */
 }
 
 .image-box img {
   width: 100%;
-  height: 220px;      /* ✅ fixed height */
+  max-height: 250px;  /* ✅ limit height */
   object-fit: cover;  /* ✅ crop neatly */
   border-radius: 8px;
 }
