@@ -439,59 +439,6 @@ footer {
   color: #777;
   font-size: 14px;
 }
-/* Mobile Responsive Adjustments */
-@media (max-width: 768px) {
-  /* Hero Section stacks vertically */
-  .luxury-hero {
-    flex-direction: column;
-    text-align: center;
-    padding: 30px 20px;
-  }
-
-  .hero-content {
-    max-width: 100%;
-  }
-
-  .hero-content h1 {
-    font-size: 28px;   /* smaller heading */
-  }
-
-  .hero-content p {
-    font-size: 16px;
-  }
-
-  .hero-btn {
-    font-size: 16px;
-    padding: 10px 20px;
-  }
-
-  .hero-images img {
-    max-width: 100%;   /* image fits screen */
-    height: auto;
-  }
-
-  /* Products grid becomes single column */
-  .products {
-    grid-template-columns: 1fr;
-    padding: 20px;
-  }
-
-  /* Cart panel full width on mobile */
-  #cart-panel {
-    width: 100%;
-    right: -100%;
-  }
-  #cart-panel.active {
-    right: 0;
-  }
-
-  /* Footer stacks vertically */
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
-  }
-}
 
 /* Cart Panel Default */
 #cart-panel {
