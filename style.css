@@ -488,14 +488,17 @@ footer {
 /* ✅ Mobile Responsive */
 @media (max-width: 768px) {
   #cart-panel {
-    width: 100%;        /* full width */
-    right: -100%;       /* hide off-screen */
-    left: 0;            /* cover from left to right */
+    width: 100%;          /* full width */
+    height: 100%;         /* full height */
+    right: auto;          /* ❌ remove fixed right */
+    left: 0;              /* ✅ start from left */
+    transform: translateX(100%); /* ✅ hidden by default */
   }
+
   #cart-panel.active {
-    right: 0;
-    left: 0;            /* show full screen */
+    transform: translateX(0);    /* ✅ slide in neatly */
   }
+}
 
   .checkout-btn {
     width: 100%;        /* button full width */
