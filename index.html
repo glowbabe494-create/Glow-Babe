@@ -14,16 +14,32 @@
   </div>
 
   <!-- 🧭 Navigation -->
-  <header>
-    <nav>
+<header>
+  <nav class="navbar">
+    <div class="nav-left">
       <a href="#">Home</a>
-      <a href="#products">Shop</a>
-      <a href="#contact">Contact</a>
-      <div class="cart-icon" onclick="toggleCart(true)">
+      <a href="#all-products">All Products</a>
+      <a href="#jhumkas">Shop All Jhumkas</a>
+      <a href="#rings">Rings</a>
+      <a href="#contact">Contact Us</a>
+    </div>
+
+    <div class="nav-right">
+      <!-- Search -->
+      <button class="icon-btn">
+        🔍
+      </button>
+      <!-- Profile -->
+      <button class="icon-btn">
+        👤
+      </button>
+      <!-- Cart -->
+      <button class="icon-btn" onclick="toggleCart(true)">
         🛒 <span id="cart-count">0</span>
-      </div>
-    </nav>
-  </header>
+      </button>
+    </div>
+  </nav>
+</header>
 
   <!-- 🎀 Hero Section -->
   <section class="hero">
