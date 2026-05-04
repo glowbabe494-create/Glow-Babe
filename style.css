@@ -282,3 +282,65 @@ footer {
     align-items: center;
   }
 }
+
+/* Contact Section */
+.contact-section {
+  background: #f8f8f8;
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #c2185b;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  font-size: 16px;
+  color: #444;
+  margin: 5px 0;
+}
+
+/* Payment Methods & Social Links */
+.payment-methods, .social-links {
+  margin-top: 30px;
+}
+
+.payment-methods h3, .social-links h3 {
+  font-size: 20px;
+  color: #c2185b;
+  margin-bottom: 15px;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.icons img {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: transform 0.3s, filter 0.3s;
+}
+
+/* Hover Animation */
+.icons img:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 4px 8px rgba(212,175,55,0.6)); /* golden glow */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .icons {
+    gap: 15px;
+  }
+  .icons img {
+    width: 40px;
+    height: 40px;
+  }
+}
