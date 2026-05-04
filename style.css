@@ -17,67 +17,57 @@ body {
   letter-spacing: 0.5px;
 }
 
-/* Navbar */
+/* Navigation Bar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: #fff;
-  padding: 15px 30px;
+  padding: 15px 40px;
   border-bottom: 1px solid #eee;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-.nav-links a {
-  margin: 0 12px;
+.nav-left a {
   text-decoration: none;
   color: #333;
+  margin: 0 15px;
   font-weight: 600;
+  font-size: 15px;
+  transition: color 0.3s;
 }
 
-.nav-icons {
+.nav-left a:hover {
+  color: #e91e63;
+}
+
+.nav-right {
   display: flex;
-  gap: 15px;
-  align-items: center;
+  gap: 20px;
 }
 
-.hamburger {
+.icon-btn {
   background: none;
   border: none;
-  font-size: 22px;
+  font-size: 18px;
   cursor: pointer;
-  display: none; /* hidden on desktop */
-}
-
-/* Mobile Menu */
-#mobile-menu {
-  position: fixed;
-  top: 0;
-  left: -100%;
-  width: 250px;
-  height: 100%;
-  background: #fff;
-  box-shadow: 2px 0 10px rgba(0,0,0,0.2);
-  padding: 40px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  transition: left 0.3s ease;
-  z-index: 999;
-}
-#mobile-menu a {
-  text-decoration: none;
   color: #333;
-  font-weight: 600;
-}
-#mobile-menu.active {
-  left: 0;
+  transition: all 0.3s ease;
 }
 
-/* Responsive */
-@media (max-width: 992px) {
-  .nav-links { display: none; }
-  .hamburger { display: block; }
+.icon-btn:hover {
+  color: #e91e63;
+  transform: scale(1.1);
+}
+
+#cart-count {
+  background: #e91e63;
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  margin-left: 5px;
+  font-weight: bold;
 }
 
 /* Hero Banner */
