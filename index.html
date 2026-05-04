@@ -11,9 +11,9 @@
   <header>
     <nav>
       <a href="#">Home</a>
-      <a href="#">Shop</a>
-      <a href="#">Contact</a>
-      <div class="cart-icon">
+      <a href="#products">Shop</a>
+      <a href="#contact">Contact</a>
+      <div class="cart-icon" onclick="toggleCart(true)">
         🛒 <span id="cart-count">0</span>
       </div>
     </nav>
@@ -23,7 +23,7 @@
   <section class="hero">
     <h1>Elevate Your Glow</h1>
     <p>Discover our curated collection of premium jewelry & cosmetics.</p>
-    <button onclick="scrollToProducts()">Shop Now</button>
+    <button onclick="document.getElementById('products').scrollIntoView()">Shop Now</button>
   </section>
 
   <!-- Products -->
@@ -31,13 +31,13 @@
     <h2>Featured Products</h2>
     <div class="product-grid">
       <div class="product">
-        <img src="lipstick.jpg" alt="Lipstick">
+        <img src="images/lipstick.jpg" alt="Lipstick">
         <h3>Lipstick</h3>
         <p>Rs 1200</p>
         <button onclick="addToCart('Lipstick', 1200)">Add to Cart</button>
       </div>
       <div class="product">
-        <img src="ring.jpg" alt="Ring">
+        <img src="images/ring.jpg" alt="Ring">
         <h3>Elegant Ring</h3>
         <p>Rs 2000</p>
         <button onclick="addToCart('Ring', 2000)">Add to Cart</button>
@@ -54,8 +54,15 @@
     <ul id="cart-items"></ul>
     <p id="total">Total: Rs 0</p>
     <textarea id="order-notes" placeholder="Add notes for your order..."></textarea>
-    <button onclick="checkoutWhatsApp()">Checkout via WhatsApp</button>
+    <button class="checkout-btn" onclick="checkoutWhatsApp()">Checkout via WhatsApp</button>
   </div>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: glowbabestore@gmail.com</p>
+    <p>WhatsApp: +92 314 6604294</p>
+  </section>
 
   <script src="script.js"></script>
 </body>
