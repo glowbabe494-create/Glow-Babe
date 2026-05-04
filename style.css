@@ -19,6 +19,7 @@ nav { display:flex; justify-content:space-between; padding:15px; background:#f8f
 #cart-panel.active { transform: translateX(0); }
 .cart-header { display:flex; justify-content:space-between; align-items:center; }
 .close-btn { cursor:pointer; font-size:22px; color:#e91e63; }
+.checkout-btn { background:#e91e63; color:#fff; padding:12px; border:none; width:100%; margin-top:10px; }
 
 /* Mobile Responsive */
 @media (max-width:768px) {
