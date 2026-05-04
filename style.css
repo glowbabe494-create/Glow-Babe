@@ -94,7 +94,7 @@ body {
 
 /* Left Text */
 .hero-text h2 {
-  font-size: 32px;
+  font-size: 34px;
   font-weight: 700;
   color: #c2185b;
   margin-bottom: 20px;
@@ -123,6 +123,7 @@ body {
 }
 .shop-btn i {
   font-size: 18px;
+  color: #fff;
 }
 .shop-btn:hover {
   transform: scale(1.05);
@@ -168,7 +169,6 @@ body {
   .hero-text h2 { font-size: 26px; }
   .hero-image img, .hero-portrait img { height: 300px; }
 }
-
 /* Product Grid */
 .product-grid {
   display: flex;
