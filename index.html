@@ -3,11 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GlowBabe Store</title>
+  <title>GlowBabe</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Navigation -->
+
+  <!-- 🔝 Promo Banner -->
+  <div class="promo-banner">
+    15% OFF All Accessories ✨ FREE Shipping over Rs 3500 🚚 Hurry, No Restocks Guaranteed!
+  </div>
+
+  <!-- 🧭 Navigation -->
   <header>
     <nav>
       <a href="#">Home</a>
@@ -19,14 +25,14 @@
     </nav>
   </header>
 
-  <!-- Hero Banner -->
+  <!-- 🎀 Hero Section -->
   <section class="hero">
     <h1>Elevate Your Glow</h1>
     <p>Discover our curated collection of premium jewelry & cosmetics.</p>
     <button onclick="document.getElementById('products').scrollIntoView()">Shop Now</button>
   </section>
 
-  <!-- Products -->
+  <!-- 🛍️ Featured Products -->
   <section id="products">
     <h2>Featured Products</h2>
     <div class="product-grid">
@@ -45,7 +51,7 @@
     </div>
   </section>
 
-  <!-- Cart Panel -->
+  <!-- 🛒 Cart Panel -->
   <div id="cart-panel">
     <div class="cart-header">
       <h2>My Cart</h2>
@@ -57,12 +63,35 @@
     <button class="checkout-btn" onclick="checkoutWhatsApp()">Checkout via WhatsApp</button>
   </div>
 
-  <!-- Contact -->
+  <!-- 📩 Contact -->
   <section id="contact">
     <h2>Contact Us</h2>
     <p>Email: glowbabestore@gmail.com</p>
     <p>WhatsApp: +92 314 6604294</p>
   </section>
+
+  <!-- 📦 Footer -->
+  <footer>
+    <div class="footer-links">
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#products">Shop All</a></li>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Care Guide</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Shipping & Delivery</a></li>
+          <li><a href="#">Returns & Exchanges</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <p>© 2026 GlowBabe. All rights reserved.</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
