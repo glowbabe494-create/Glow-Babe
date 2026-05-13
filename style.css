@@ -71,35 +71,35 @@ body {
 }
 
 /* Hero Banner */
-/* Banner */
+/* Banner with Background Image */
 .hero-banner {
-  background: linear-gradient(135deg, #fff, #fdf5f5);
-  padding: 80px 40px;
+  position: relative;
+  height: 100vh; /* full screen height */
+  background: url('assets/glowbabe-banner.jpg') no-repeat center center/cover;
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: fadeBg 8s infinite alternate;
+  overflow: hidden;
 }
 
-/* Layout */
-.hero-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 40px;
-  flex-wrap: wrap;
+/* Overlay for text readability */
+.overlay {
+  background: rgba(0,0,0,0.4); /* dark transparent layer */
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  animation: fadeIn 2s ease forwards;
 }
 
-/* Text */
 .hero-text h1 {
-  font-size: 40px;
+  font-size: 42px;
   font-weight: 700;
-  color: #c2185b;
+  color: #fff;
   margin-bottom: 20px;
 }
 .hero-text p {
   font-size: 18px;
-  color: #555;
+  color: #eee;
   margin-bottom: 25px;
   line-height: 1.6;
 }
@@ -107,7 +107,7 @@ body {
 /* Button */
 .shop-btn {
   background: linear-gradient(45deg, #d4af37, #f5d76e);
-  color: #fff;
+  color: #111;
   border: none;
   padding: 14px 28px;
   font-size: 16px;
@@ -124,26 +124,6 @@ body {
   box-shadow: 0 6px 16px rgba(212,175,55,0.6);
 }
 
-/* Images */
-.hero-images {
-  display: flex;
-  gap: 20px;
-}
-.image-box img {
-  width: 300px;
-  height: 400px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-}
-.caption {
-  margin-top: 10px;
-  font-size: 14px;
-  color: #444;
-  text-align: center;
-  font-style: italic;
-}
-
 /* Animations */
 .fade-in {
   animation: fadeIn 2s ease forwards;
@@ -154,14 +134,7 @@ body {
 .bounce {
   animation: bounce 2s infinite;
 }
-.zoom-in {
-  animation: zoomIn 1.5s ease forwards;
-}
-.zoom-in.delay {
-  animation-delay: 0.8s;
-}
 
-/* Keyframes */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -174,25 +147,13 @@ body {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
 }
-@keyframes zoomIn {
-  from { transform: scale(0.9); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-@keyframes fadeBg {
-  from { background: linear-gradient(135deg, #fff, #fdf5f5); }
-  to { background: linear-gradient(135deg, #fff, #ffe6e6); }
-}
 
 /* Responsive */
 @media (max-width: 992px) {
-  .hero-content {
-    flex-direction: column;
-    text-align: center;
-  }
   .hero-text h1 { font-size: 28px; }
-  .hero-images { flex-direction: column; }
-  .image-box img { width: 100%; height: auto; }
+  .hero-text p { font-size: 16px; }
 }
+
 
 /* Product Grid */
 .product-grid {
