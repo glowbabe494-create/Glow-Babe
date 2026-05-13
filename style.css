@@ -57,6 +57,7 @@ body {
 }
 
 /* Hero Banner */
+/* Hero Banner */
 .hero-banner {
   position: relative;
   width: 100%;
@@ -74,7 +75,7 @@ body {
   animation: zoomOut 8s ease-out forwards;
 }
 
-/* Overlay */
+/* Overlay (Desktop) */
 .banner-overlay {
   position: absolute;
   bottom: 140px;   /* thoda upar adjust */
@@ -94,7 +95,7 @@ body {
   margin-bottom: 20px;
 }
 
-/* Unique Shop Button */
+/* Shop Now Button */
 .shop-btn {
   background: linear-gradient(135deg, #d4af37, #f5d76e);
   color: #111;
@@ -115,7 +116,7 @@ body {
   overflow: hidden;
 }
 
-/* Shimmer Effect */
+/* Shimmer Glow */
 .shop-btn::after {
   content: "";
   position: absolute;
@@ -146,17 +147,18 @@ body {
   100% { left: 100%; }
 }
 
-/* Responsive */
-@media (max-width: 992px) {
-  .banner-title { font-size: 32px; }
-  .shop-btn { padding: 12px 28px; font-size: 15px; }
+/* Responsive (Mobile) */
+@media (max-width: 768px) {
+  .hero-banner { height: 70vh; } /* mobile par image adjust */
+  .banner-image { height: 100%; object-fit: cover; }
   .banner-overlay { 
-    bottom: 80px; 
+    bottom: 60px;   /* mobile par thoda upar */
     left: 50%; 
     transform: translateX(-50%); 
     text-align: center; 
   }
-  .banner-image { height: 70vh; } /* mobile par image adjust */
+  .banner-title { font-size: 28px; }
+  .shop-btn { padding: 12px 28px; font-size: 15px; }
 }
 
 
