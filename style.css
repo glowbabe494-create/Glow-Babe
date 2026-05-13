@@ -71,10 +71,101 @@ body {
 }
 
 /* Hero Banner */
-.hero-banner img {
-  width: 100%;
-  height: auto;
-  display: block;
+/* Banner with Parallax Background */
+.hero-banner {
+  position: relative;
+  height: 100vh;
+  background: url('assets/glowbabe-banner.jpg') no-repeat center center/cover;
+  background-attachment: fixed; /* parallax scroll */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Overlay for readability */
+.overlay {
+  background: rgba(0,0,0,0.4);
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  animation: fadeIn 2s ease forwards;
+}
+
+/* Text with Gold Gradient */
+.gold-gradient {
+  background: linear-gradient(45deg, #d4af37, #f5d76e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-text h1 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.hero-text p {
+  font-size: 18px;
+  color: #eee;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+/* CTA Button */
+.shop-btn {
+  background: linear-gradient(45deg, #d4af37, #f5d76e);
+  color: #111;
+  border: none;
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.shop-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(212,175,55,0.6);
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 2s ease forwards;
+}
+.slide-up {
+  animation: slideUp 2s ease forwards;
+}
+.bounce {
+  animation: bounce 2s infinite;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* Hover shimmer for images */
+.hero-banner img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2) drop-shadow(0 0 10px rgba(212,175,55,0.6));
+  transition: all 0.4s ease;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .hero-text h1 { font-size: 28px; }
+  .hero-text p { font-size: 16px; }
 }
 
 
