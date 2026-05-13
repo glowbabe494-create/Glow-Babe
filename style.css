@@ -87,29 +87,21 @@ body {
 
 .banner-overlay {
   position: absolute;
-  top: 55%;   /* thoda neeche */
-  left: 12%;  /* left side placement */
+  top: 60px;   /* screen ke top se distance */
+  left: 60px;  /* screen ke left se distance */
   text-align: left;
   color: #fff;
-  transform: none; /* remove center translate */
-  animation: fadeIn 2s ease-out forwards;
 }
 
-}
 .banner-title {
   font-size: 48px;
   font-weight: 700;
   background: linear-gradient(45deg, #d4af37, #f5d76e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-.banner-subtitle {
-  font-size: 18px;
-  margin-bottom: 25px;
-  color: #eee;
+  margin-bottom: 20px;
 }
 
-/* Premium CTA Button */
 .shop-btn {
   background: linear-gradient(45deg, #d4af37, #f5d76e);
   color: #111;
