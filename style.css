@@ -85,14 +85,16 @@ body {
   filter: brightness(0.9);
 }
 
-/* Overlay text + button */
 .banner-overlay {
   position: absolute;
-  top: 45%;   /* thoda neeche */
+  top: 55%;   /* thoda neeche */
   left: 12%;  /* left side placement */
   text-align: left;
   color: #fff;
+  transform: none; /* remove center translate */
   animation: fadeIn 2s ease-out forwards;
+}
+
 }
 .banner-title {
   font-size: 48px;
