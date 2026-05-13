@@ -69,25 +69,41 @@ body {
   object-fit: cover;
   display: block;
   filter: brightness(0.9);
-}
-.banner-overlay {
-  position: absolute;
-  bottom: 120px;   /* thoda upar kar diya */
-  left: 60px;      /* left side placement */
-  text-align: left;
-  color: #fff;
-  transform: none; /* remove center translate */
+  transform: scale(1.05);
+  transition: transform 6s ease-out, filter 2s ease-out;
+  animation: zoomOut 8s ease-out forwards;
 }
 
+/* Overlay */
+.banner-overlay {
+  position: absolute;
+  bottom: 140px;   /* thoda upar adjust */
+  left: 60px;
+  text-align: left;
+  color: #fff;
+  transform: none;
+}
+
+/* Title */
+.banner-title {
+  font-size: 48px;
+  font-weight: 700;
+  background: linear-gradient(45deg, #d4af37, #f5d76e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+}
+
+/* Unique Shop Button */
 .shop-btn {
-  background: linear-gradient(135deg, #d4af37, #f5d76e); /* golden gradient */
+  background: linear-gradient(135deg, #d4af37, #f5d76e);
   color: #111;
   border: none;
-  padding: 14px 32px;
+  padding: 14px 36px;
   font-size: 17px;
   font-weight: bold;
   cursor: pointer;
-  border-radius: 50px; /* pill shape for unique style */
+  border-radius: 50px; /* pill shape */
   transition: all 0.4s ease;
   display: inline-flex;
   align-items: center;
@@ -95,33 +111,52 @@ body {
   letter-spacing: 1px;
   box-shadow: 0 4px 12px rgba(212,175,55,0.5);
   animation: floatUp 3s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
 }
 
+/* Shimmer Effect */
+.shop-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+  animation: shimmer 2.5s infinite;
+}
 .shop-btn:hover {
   transform: translateY(-4px) scale(1.08);
   background: linear-gradient(135deg, #f5d76e, #d4af37);
   box-shadow: 0 8px 20px rgba(212,175,55,0.7);
 }
 
-/* Unique floating animation */
+/* Animations */
+@keyframes zoomOut {
+  from { transform: scale(1.15); filter: brightness(0.8); }
+  to { transform: scale(1.05); filter: brightness(0.95); }
+}
 @keyframes floatUp {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
 }
-
-
-
-/* Animations */
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
 }
 
 /* Responsive */
 @media (max-width: 992px) {
   .banner-title { font-size: 32px; }
-  .shop-btn { padding: 12px 24px; font-size: 14px; }
-  .banner-overlay { left: 50%; transform: translateX(-50%); text-align: center; }
+  .shop-btn { padding: 12px 28px; font-size: 15px; }
+  .banner-overlay { 
+    bottom: 80px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    text-align: center; 
+  }
+  .banner-image { height: 70vh; } /* mobile par image adjust */
 }
 
 
