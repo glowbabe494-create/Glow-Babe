@@ -73,10 +73,10 @@ body {
 .banner-overlay {
   position: absolute;
   bottom: 80px;   /* screen ke bottom se thoda upar */
-  left: 80px;     /* bilkul left side */
+  left: 60px;     /* bilkul left side */
   text-align: left;
   color: #fff;
-  transform: none; /* IMPORTANT: center translate hatao */
+  transform: none; /* IMPORTANT: remove center translate */
 }
 
 .banner-title {
@@ -107,6 +107,7 @@ body {
   transform: scale(1.1);
   box-shadow: 0 6px 16px rgba(212,175,55,0.6);
 }
+
 
 /* Animations */
 @keyframes bounce {
