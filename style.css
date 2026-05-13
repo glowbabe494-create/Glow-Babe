@@ -243,6 +243,7 @@ body {
 }
 
 /* Footer */
+/* Footer */
 .footer {
   background: #111;
   color: #eee;
@@ -297,9 +298,20 @@ body {
   transition: transform 0.3s, filter 0.3s;
 }
 
-.footer-icons img:hover {
+/* Hover Animation for Social Icons */
+.footer-icons a img:hover {
   transform: scale(1.2);
   filter: drop-shadow(0 4px 8px rgba(212,175,55,0.6)); /* golden glow */
+}
+
+/* Disable hover for payment methods */
+.no-hover img {
+  cursor: default;
+  transition: none;
+}
+.no-hover img:hover {
+  transform: none;
+  filter: none;
 }
 
 /* Bottom */
