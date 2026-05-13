@@ -243,12 +243,11 @@ body {
 }
 
 /* Footer */
-/* Footer */
 .footer {
   background: #111;
   color: #eee;
   padding: 60px 40px 20px;
-  font-family: Arial, sans-serif;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
 .footer-container {
@@ -262,6 +261,7 @@ body {
   color: #d4af37; /* golden headings */
   margin-bottom: 15px;
   font-size: 18px;
+  font-weight: 700;
 }
 
 .footer-section p, .footer-section ul li a {
