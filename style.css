@@ -71,88 +71,12 @@ body {
 }
 
 /* Hero Banner */
-/* Banner with Background Image */
-.hero-banner {
-  position: relative;
-  height: 100vh; /* full screen height */
-  background: url('assets/glowbabe-banner.jpg') no-repeat center center/cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+.hero-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-/* Overlay for text readability */
-.overlay {
-  background: rgba(0,0,0,0.4); /* dark transparent layer */
-  padding: 40px;
-  border-radius: 12px;
-  text-align: center;
-  animation: fadeIn 2s ease forwards;
-}
-
-.hero-text h1 {
-  font-size: 42px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 20px;
-}
-.hero-text p {
-  font-size: 18px;
-  color: #eee;
-  margin-bottom: 25px;
-  line-height: 1.6;
-}
-
-/* Button */
-.shop-btn {
-  background: linear-gradient(45deg, #d4af37, #f5d76e);
-  color: #111;
-  border: none;
-  padding: 14px 28px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-.shop-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 16px rgba(212,175,55,0.6);
-}
-
-/* Animations */
-.fade-in {
-  animation: fadeIn 2s ease forwards;
-}
-.slide-up {
-  animation: slideUp 2s ease forwards;
-}
-.bounce {
-  animation: bounce 2s infinite;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
-/* Responsive */
-@media (max-width: 992px) {
-  .hero-text h1 { font-size: 28px; }
-  .hero-text p { font-size: 16px; }
-}
 
 
 /* Product Grid */
