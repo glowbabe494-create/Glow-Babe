@@ -72,41 +72,43 @@ body {
 }
 .banner-overlay {
   position: absolute;
-  bottom: 80px;   /* screen ke bottom se thoda upar */
-  left: 60px;     /* bilkul left side */
+  bottom: 120px;   /* thoda upar kar diya */
+  left: 60px;      /* left side placement */
   text-align: left;
   color: #fff;
-  transform: none; /* IMPORTANT: remove center translate */
-}
-
-.banner-title {
-  font-size: 48px;
-  font-weight: 700;
-  background: linear-gradient(45deg, #d4af37, #f5d76e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 20px; /* title ke neeche gap */
+  transform: none; /* remove center translate */
 }
 
 .shop-btn {
-  background: linear-gradient(45deg, #d4af37, #f5d76e);
+  background: linear-gradient(135deg, #d4af37, #f5d76e); /* golden gradient */
   color: #111;
   border: none;
-  padding: 14px 28px;
-  font-size: 16px;
+  padding: 14px 32px;
+  font-size: 17px;
   font-weight: bold;
   cursor: pointer;
-  border-radius: 6px;
-  transition: all 0.3s ease;
+  border-radius: 50px; /* pill shape for unique style */
+  transition: all 0.4s ease;
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  animation: bounce 2s infinite;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 12px rgba(212,175,55,0.5);
+  animation: floatUp 3s ease-in-out infinite;
 }
+
 .shop-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 16px rgba(212,175,55,0.6);
+  transform: translateY(-4px) scale(1.08);
+  background: linear-gradient(135deg, #f5d76e, #d4af37);
+  box-shadow: 0 8px 20px rgba(212,175,55,0.7);
 }
+
+/* Unique floating animation */
+@keyframes floatUp {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
 
 
 /* Animations */
