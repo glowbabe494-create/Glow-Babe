@@ -82,16 +82,16 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
-  filter: brightness(0.9);
 }
-
 .banner-overlay {
   position: absolute;
-  top: 60px;   /* screen ke top se distance */
-  left: 60px;  /* screen ke left se distance */
+  top: 120px;   /* thoda neeche */
+  left: 80px;   /* left side */
   text-align: left;
   color: #fff;
+  transform: none; /* remove center translate */
 }
+
 
 .banner-title {
   font-size: 48px;
