@@ -147,18 +147,29 @@ body {
   100% { left: 100%; }
 }
 
-/* Responsive (Mobile) */
-@media (max-width: 768px) {
-  .hero-banner { height: 70vh; } /* mobile par image adjust */
-  .banner-image { height: 100%; object-fit: cover; }
+/* Responsive (Mobile + Tablet) */
+@media (max-width: 992px) {
+  .hero-banner { height: 80vh; } /* tablet par thoda chhota */
+  .banner-title { font-size: 32px; }
+  .shop-btn { padding: 12px 28px; font-size: 15px; }
   .banner-overlay { 
-    bottom: 60px;   /* mobile par thoda upar */
+    bottom: 100px; 
     left: 50%; 
     transform: translateX(-50%); 
     text-align: center; 
   }
-  .banner-title { font-size: 28px; }
-  .shop-btn { padding: 12px 28px; font-size: 15px; }
+}
+
+@media (max-width: 768px) {
+  .hero-banner { height: 70vh; } /* mobile par perfect fit */
+  .banner-title { font-size: 26px; }
+  .shop-btn { padding: 10px 24px; font-size: 14px; }
+  .banner-overlay { 
+    bottom: 60px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    text-align: center; 
+  }
 }
 
 
