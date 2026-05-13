@@ -71,7 +71,6 @@ body {
 }
 
 /* Hero Banner */
-/* Banner Base */
 .hero-banner {
   position: relative;
   width: 100%;
@@ -86,13 +85,13 @@ body {
   filter: brightness(0.9);
 }
 
-/* Overlay Text + Button */
+/* Overlay text + button */
 .banner-overlay {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  top: 40%; /* aligns under Glow Babe title */
+  left: 15%; /* left side placement */
+  transform: translateY(-50%);
+  text-align: left;
   color: #fff;
   animation: fadeIn 2s ease-out forwards;
 }
@@ -132,8 +131,8 @@ body {
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translate(-50%, -40%); }
-  to { opacity: 1; transform: translate(-50%, -50%); }
+  from { opacity: 0; transform: translateY(-40%); }
+  to { opacity: 1; transform: translateY(-50%); }
 }
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
@@ -144,6 +143,7 @@ body {
 @media (max-width: 992px) {
   .banner-title { font-size: 32px; }
   .shop-btn { padding: 12px 24px; font-size: 14px; }
+  .banner-overlay { left: 50%; transform: translate(-50%, -50%); text-align: center; }
 }
 
 
