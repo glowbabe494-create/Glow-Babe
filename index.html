@@ -1051,72 +1051,30 @@ function closeCheckout() {
   document.body.style.overflow = '';
 }
   
-<script>
-let currentStep = 1;
 
 function goStep(n) {
-
-  // validations (if you have them)
   if (n > 1) {
-    if (n >= 2 && typeof validate1 === "function") {
-      if (!validate1()) return;
-    }
-    if (n >= 3 && typeof validate2 === "function") {
-      if (!validate2()) return;
-    }
+    if (n >= 2) { if (!validate1()) return; }
+    if (n >= 3) { if (!validate2()) return; }
   }
-
   currentStep = n;
-
   const stepsBar = document.getElementById('stepsBar');
   const panels = document.querySelectorAll('.step-panel');
-
-  // ❌ Hide all steps properly
-  panels.forEach(p => {
-    p.classList.remove('active');
-    p.style.display = 'none';
-  });
-
-  // ✅ Show current step
-  const target = document.getElementById('panel-' + n);
-  if (target) {
-    target.style.display = 'flex';   // checkout layout ke liye best
-    target.classList.add('active');
-  }
-
-  // 🔵 Update step bar
-  for (let i = 1; i <= 4; i++) {
-    const tab = document.getElementById('step-tab-' + i);
+  panels.forEach(p => p.classList.remove('active'));
+  const target = document.getElementById('panel-'+n);
+  if (target) target.classList.add('active');
+  for (let i=1; i<=4; i++) {
+    const tab = document.getElementById('step-tab-'+i);
     if (!tab) continue;
-
-    tab.classList.remove('active', 'done');
-
+    tab.classList.remove('active','done');
     if (i < n) tab.classList.add('done');
     else if (i === n) tab.classList.add('active');
   }
-
-  // hide step bar on final step (optional)
-  if (stepsBar) {
-    stepsBar.style.display = (n === 5) ? 'none' : 'flex';
-  }
-
-  // title change (optional)
-  const title = document.getElementById('modalTitle');
-  if (title) {
-    title.textContent = (n === 5) ? '🎉 Order Confirmed!' : 'Checkout';
-  }
-
-  // summary update
-  if (typeof buildSummary === "function") {
-    buildSummary('summaryCol' + (n <= 3 ? n : '3'));
-  }
-
-  // order preview
-  if (n === 4 && typeof buildOrderPreview === "function") {
-    buildOrderPreview();
-  }
+  stepsBar.style.display = (n === 5) ? 'none' : '';
+  document.getElementById('modalTitle').textContent = n===5 ? '🎉 Order Confirmed!' : 'Checkout';
+  buildSummary('summaryCol'+(n<=3?n:'3'));
+  if (n===4) buildOrderPreview();
 }
-</script>
 
 function validate1() {
   const fn = document.getElementById('fn').value.trim();
