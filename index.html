@@ -396,9 +396,7 @@ footer{padding:50px 24px 24px}
 </head>
 <body>
 
-<!-- Custom Cursor -->
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
+
 
 <!-- Announcement Bar -->
 <div class="ann">
@@ -608,9 +606,9 @@ footer{padding:50px 24px 24px}
       <div class="f-brand-name">Glow<em>Babe</em>.pk</div>
       <p class="f-brand-desc">Pakistan's most-loved destination for girls jewellery and accessories. Every piece handpicked with love, quality, and your glow in mind.</p>
       <div class="f-contact-line">📍 Lahore, Pakistan</div>
-      <div class="f-contact-line">📩 hello@glowbabe.pk</div>
-      <div class="f-contact-line">💬 WhatsApp: +92 300 GLOWBABE</div>
-      <div class="f-contact-line">🕐 Mon–Sat, 10am–8pm</div>
+      <div class="f-contact-line">📩 glowbabe.pk@gmail.com</div>
+      <div class="f-contact-line">💬 WhatsApp: +92 3194455289 GLOWBABE</div>
+      <div class="f-contact-line">🕐 Mon–Sat, 10am–10pm</div>
     </div>
     <div class="f-col"><div class="f-col-title">Shop</div><ul><li><a href="#">New Arrivals</a></li><li><a href="#">Rings</a></li><li><a href="#">Earrings</a></li><li><a href="#">Necklaces</a></li><li><a href="#">Bracelets</a></li><li><a href="#">Gift Sets</a></li></ul></div>
     <div class="f-col"><div class="f-col-title">Help</div><ul><li><a href="#">Track Order</a></li><li><a href="#">Returns Policy</a></li><li><a href="#">Size Guide</a></li><li><a href="#">FAQs</a></li><li><a href="#">Contact Us</a></li></ul></div>
@@ -1052,30 +1050,73 @@ function closeCheckout() {
   document.getElementById('checkoutOverlay').classList.remove('open');
   document.body.style.overflow = '';
 }
+  
+<script>
+let currentStep = 1;
 
 function goStep(n) {
+
+  // validations (if you have them)
   if (n > 1) {
-    if (n >= 2) { if (!validate1()) return; }
-    if (n >= 3) { if (!validate2()) return; }
+    if (n >= 2 && typeof validate1 === "function") {
+      if (!validate1()) return;
+    }
+    if (n >= 3 && typeof validate2 === "function") {
+      if (!validate2()) return;
+    }
   }
+
   currentStep = n;
+
   const stepsBar = document.getElementById('stepsBar');
   const panels = document.querySelectorAll('.step-panel');
-  panels.forEach(p => p.classList.remove('active'));
-  const target = document.getElementById('panel-'+n);
-  if (target) target.classList.add('active');
-  for (let i=1; i<=4; i++) {
-    const tab = document.getElementById('step-tab-'+i);
+
+  // ❌ Hide all steps properly
+  panels.forEach(p => {
+    p.classList.remove('active');
+    p.style.display = 'none';
+  });
+
+  // ✅ Show current step
+  const target = document.getElementById('panel-' + n);
+  if (target) {
+    target.style.display = 'flex';   // checkout layout ke liye best
+    target.classList.add('active');
+  }
+
+  // 🔵 Update step bar
+  for (let i = 1; i <= 4; i++) {
+    const tab = document.getElementById('step-tab-' + i);
     if (!tab) continue;
-    tab.classList.remove('active','done');
+
+    tab.classList.remove('active', 'done');
+
     if (i < n) tab.classList.add('done');
     else if (i === n) tab.classList.add('active');
   }
-  stepsBar.style.display = (n === 5) ? 'none' : '';
-  document.getElementById('modalTitle').textContent = n===5 ? '🎉 Order Confirmed!' : 'Checkout';
-  buildSummary('summaryCol'+(n<=3?n:'3'));
-  if (n===4) buildOrderPreview();
+
+  // hide step bar on final step (optional)
+  if (stepsBar) {
+    stepsBar.style.display = (n === 5) ? 'none' : 'flex';
+  }
+
+  // title change (optional)
+  const title = document.getElementById('modalTitle');
+  if (title) {
+    title.textContent = (n === 5) ? '🎉 Order Confirmed!' : 'Checkout';
+  }
+
+  // summary update
+  if (typeof buildSummary === "function") {
+    buildSummary('summaryCol' + (n <= 3 ? n : '3'));
+  }
+
+  // order preview
+  if (n === 4 && typeof buildOrderPreview === "function") {
+    buildOrderPreview();
+  }
 }
+</script>
 
 function validate1() {
   const fn = document.getElementById('fn').value.trim();
