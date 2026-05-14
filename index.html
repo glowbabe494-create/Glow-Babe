@@ -1062,7 +1062,11 @@ function goStep(n) {
   const panels = document.querySelectorAll('.step-panel');
   panels.forEach(p => p.classList.remove('active'));
   const target = document.getElementById('panel-'+n);
-  if (target) target.classList.add('active');
+  if (target) {
+    target.classList.add('active');
+    // 👇 Yeh line add karo
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
   for (let i=1; i<=4; i++) {
     const tab = document.getElementById('step-tab-'+i);
     if (!tab) continue;
@@ -1075,6 +1079,7 @@ function goStep(n) {
   buildSummary('summaryCol'+(n<=3?n:'3'));
   if (n===4) buildOrderPreview();
 }
+
 
 function validate1() {
   const fn = document.getElementById('fn').value.trim();
