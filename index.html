@@ -617,7 +617,7 @@ footer{padding:50px 24px 24px}
   <div class="footer-bottom">
     <span>© 2025 GlowBabe.pk — Made with 💖 in Pakistan. All rights reserved.</span>
     <div class="socials">
-      <a href="#" class="soc-btn" title="Instagram">📸</a>
+      <a href="#" class="soc-btn" title="Instagram">https://cdn-icons-png.flaticon.com/512/3536/3536445.png</a>
       <a href="#" class="soc-btn" title="Facebook">📘</a>
       <a href="#" class="soc-btn" title="TikTok">🎵</a>
       <a href="#" class="soc-btn" title="WhatsApp">💬</a>
@@ -1024,7 +1024,7 @@ function doSearch() {
 // ─── CHECKOUT FLOW ───
 function buildSummary(colId) {
   const total = cartTotal();
-  const ship = total >= 1500 ? 0 : 150;
+  const ship = total >= 1500 ? 0 : 199;
   document.getElementById(colId).innerHTML = `
     <div class="summary-title">Order Summary</div>
     ${cart.map(i=>`<div class="summary-item">
@@ -1104,7 +1104,7 @@ function selectPay(el, val) {
 
 function buildOrderPreview() {
   const total = cartTotal();
-  const ship = total >= 1500 ? 0 : 150;
+  const ship = total >= 1500 ? 0 : 199;
   const grand = total + ship;
   const payLabels = {cod:'Cash on Delivery (COD)',jazzcash:'JazzCash / EasyPaisa',bank:'Bank Transfer'};
   document.getElementById('orderPreviewBox').innerHTML = `
@@ -1122,7 +1122,7 @@ function placeOrderViaWhatsApp() {
   const orderId = 'GB-' + Math.floor(10000 + Math.random()*90000);
   const items = cart.map(i => `• ${i.name} ×${i.qty} — Rs. ${(i.price*i.qty).toLocaleString()}`).join('\n');
   const total = cartTotal();
-  const ship = total >= 1500 ? 0 : 150;
+  const ship = total >= 1500 ? 0 : 199;
   const msg = encodeURIComponent(
 `🌸 *NEW ORDER — GlowBabe.pk*
 Order ID: *${orderId}*
