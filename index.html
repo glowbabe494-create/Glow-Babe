@@ -283,7 +283,6 @@ footer{background:var(--dark);color:rgba(255,255,255,.55);padding:70px 80px 28px
 .cart-note{text-align:center;font-size:11.5px;color:var(--muted);margin-top:12px;display:flex;align-items:center;justify-content:center;gap:6px}
 .continue-btn{width:100%;background:none;border:1.5px solid var(--border2);color:var(--dark);border-radius:var(--r3);padding:12px;font-size:13.5px;font-weight:500;cursor:pointer;transition:all .2s;font-family:var(--font-b);margin-top:10px}
 .continue-btn:hover{border-color:var(--rose2);color:var(--rose2)}
-  /* ─── CART ITEM IMAGE ─── */
 .cart-item {
   display: flex;
   align-items: center;
@@ -294,10 +293,11 @@ footer{background:var(--dark);color:rgba(255,255,255,.55);padding:70px 80px 28px
 .cart-img {
   width: 60px;
   height: 60px;
-  object-fit: cover;   /* image neatly fit ho */
+  object-fit: cover;
   border-radius: 8px;
   display: block;
 }
+
 
 
 /* ─── CHECKOUT MODAL ─── */
@@ -1023,6 +1023,7 @@ d.innerHTML = `
   </div>
   <button class="ci-remove" onclick="removeItem(${item.id})">✕</button>
 `;
+
 
     body.appendChild(d);
 
