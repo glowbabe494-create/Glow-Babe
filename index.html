@@ -1181,9 +1181,7 @@ function subscribe() {
   const v = document.getElementById('nlEmail').value.trim();
 
   if (!v || !v.includes('@')) {
-
     showToast('⚠️ Please enter a valid email');
-
     return;
   }
 
@@ -1193,11 +1191,11 @@ function subscribe() {
     "service_l0jkx6k",
     "template_yxxrrm4",
     {
-      user_email: v
+      email: v
     }
   )
 
-  .then(function () {
+  .then(() => {
 
     showToast('💖 Welcome to the Glow Club! Check your inbox.');
 
@@ -1205,7 +1203,7 @@ function subscribe() {
 
   })
 
-  .catch(function (error) {
+  .catch((error) => {
 
     console.log(error);
 
