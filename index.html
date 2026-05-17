@@ -1176,40 +1176,36 @@ function resetOrder() {
 }
 
 // ─── NEWSLETTER ───
-<!-- EmailJS -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-<script>
-
-emailjs.init("GbOp-fLRA41uQ8YkS");
-
 function subscribe() {
 
-  const emailInput = document.getElementById('nlEmail');
-  const email = emailInput.value.trim();
+  const v = document.getElementById('nlEmail').value.trim();
 
-  if (!email || !email.includes('@')) {
+  if (!v || !v.includes('@')) {
+
     showToast('⚠️ Please enter a valid email');
+
     return;
   }
+
+  emailjs.init("GbOp-fLRA41uQ8YkS");
 
   emailjs.send(
     "service_l0jkx6k",
     "template_yxxrrm4",
     {
-      user_email: email
+      user_email: v
     }
   )
 
-  .then(() => {
+  .then(function () {
 
-    showToast('💖 Welcome to Glow Club!');
+    showToast('💖 Welcome to the Glow Club! Check your inbox.');
 
-    emailInput.value = '';
+    document.getElementById('nlEmail').value = '';
 
   })
 
-  .catch((error) => {
+  .catch(function (error) {
 
     console.log(error);
 
@@ -1218,7 +1214,7 @@ function subscribe() {
   });
 
 }
-
+  
 // ─── TOAST ───
 function showToast(msg) {
   const t = document.getElementById('toast');
@@ -1236,5 +1232,6 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 // ─── INIT ───
 renderProducts();
 </script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </body>
 </html>
