@@ -940,22 +940,49 @@ function cartTotal() { return cart.reduce((s,c)=>s+c.price*c.qty, 0); }
 function cartCount() { return cart.reduce((s,c)=>s+c.qty, 0); }
 
 function updateCartUI() {
-  const total = cartTotal();
+
+  const subtotal = cartTotal();
+  const shipping = subtotal >= 1500 || subtotal === 0 ? 0 : 195;
+  const total = subtotal + shipping;
+
   const count = cartCount();
+
   document.getElementById('cartBadge').textContent = count;
-  document.getElementById('cartItemCount').textContent = count > 0 ? `(${count} item${count!==1?'s':''})` : '';
-  document.getElementById('cartTotal').textContent = `Rs. ${total.toLocaleString()}`;
-  document.getElementById('cartSubtotal').textContent = `Rs. ${total.toLocaleString()}`;
-  document.getElementById('cartShipping').textContent = total >= 1500 ? '🎉 FREE!' : 'Rs. 195';
+
+  document.getElementById('cartItemCount').textContent =
+    count > 0 ? `(${count} item${count!==1?'s':''})` : '';
+
+  document.getElementById('cartSubtotal').textContent =
+    `Rs. ${subtotal.toLocaleString()}`;
+
+  document.getElementById('cartShipping').textContent =
+    shipping === 0 ? '🎉 FREE!' : `Rs. ${shipping.toLocaleString()}`;
+
+  document.getElementById('cartTotal').textContent =
+    `Rs. ${total.toLocaleString()}`;
+
   const body = document.getElementById('cartBody');
   const emptyEl = document.getElementById('cartEmptyState');
+
   const existing = body.querySelectorAll('.cart-item');
+
   existing.forEach(e=>e.remove());
-  if (cart.length === 0) { emptyEl.style.display=''; return; }
+
+  if (cart.length === 0) {
+
+    emptyEl.style.display='';
+
+    return;
+  }
+
   emptyEl.style.display = 'none';
+
   cart.forEach(item => {
+
     const d = document.createElement('div');
+
     d.className = 'cart-item';
+
     d.innerHTML = `<div class="ci-thumb">${item.emoji}</div>
     <div class="ci-info">
       <div class="ci-name">${item.name}</div>
@@ -968,8 +995,11 @@ function updateCartUI() {
       </div>
     </div>
     <button class="ci-remove" onclick="removeItem(${item.id})">✕</button>`;
+
     body.appendChild(d);
+
   });
+
 }
 
 function openCart() {
