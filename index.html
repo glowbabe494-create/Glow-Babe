@@ -308,6 +308,21 @@ footer{background:var(--dark);color:rgba(255,255,255,.55);padding:70px 80px 28px
 .modal-header{padding:28px 32px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
 .modal-header h2{font-family:var(--font-h);font-size:26px;font-weight:700}
 .modal-body{overflow-y:auto;flex:1}
+.summary-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.sum-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+
 
 /* ─── CHECKOUT STEPS ─── */
 .steps-bar{display:flex;align-items:center;padding:0 32px;border-bottom:1px solid var(--border)}
@@ -1091,8 +1106,13 @@ function buildSummary(colId) {
   document.getElementById(colId).innerHTML = `
     <div class="summary-title">Order Summary</div>
     ${cart.map(i=>`<div class="summary-item">
-      <div class="sum-emo">${i.emoji}</div>
-      <div class="sum-info"><div class="sum-name">${i.name}</div><div class="sum-qty">Qty: ${i.qty}</div></div>
+      <div class="sum-thumb">
+        <img src="${i.image}" alt="${i.name}" class="sum-img">
+      </div>
+      <div class="sum-info">
+        <div class="sum-name">${i.name}</div>
+        <div class="sum-qty">Qty: ${i.qty}</div>
+      </div>
       <div class="sum-price">Rs. ${(i.price*i.qty).toLocaleString()}</div>
     </div>`).join('')}
     <div class="summary-totals">
@@ -1101,6 +1121,7 @@ function buildSummary(colId) {
       <div class="s-row total"><span>Total</span><span>Rs. ${(total+ship).toLocaleString()}</span></div>
     </div>`;
 }
+
 
 function openCheckout() {
   if (cart.length === 0) { showToast('Your bag is empty!'); return; }
