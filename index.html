@@ -946,7 +946,7 @@ function updateCartUI() {
   document.getElementById('cartItemCount').textContent = count > 0 ? `(${count} item${count!==1?'s':''})` : '';
   document.getElementById('cartTotal').textContent = `Rs. ${total.toLocaleString()}`;
   document.getElementById('cartSubtotal').textContent = `Rs. ${total.toLocaleString()}`;
-  document.getElementById('cartShipping').textContent = total >= 1500 ? '🎉 FREE!' : 'Rs. 150';
+  document.getElementById('cartShipping').textContent = total >= 1500 ? '🎉 FREE!' : 'Rs. 195';
   const body = document.getElementById('cartBody');
   const emptyEl = document.getElementById('cartEmptyState');
   const existing = body.querySelectorAll('.cart-item');
@@ -1025,7 +1025,7 @@ function doSearch() {
 // ─── CHECKOUT FLOW ───
 function buildSummary(colId) {
   const total = cartTotal();
-  const ship = total >= 1500 ? 0 : 199;
+  const ship = total >= 1500 ? 0 : 195;
   document.getElementById(colId).innerHTML = `
     <div class="summary-title">Order Summary</div>
     ${cart.map(i=>`<div class="summary-item">
@@ -1105,7 +1105,7 @@ function selectPay(el, val) {
 
 function buildOrderPreview() {
   const total = cartTotal();
-  const ship = total >= 1500 ? 0 : 199;
+  const ship = total >= 1500 ? 0 : 195;
   const grand = total + ship;
   const payLabels = {cod:'Cash on Delivery (COD)',jazzcash:'JazzCash / EasyPaisa',bank:'Bank Transfer'};
   document.getElementById('orderPreviewBox').innerHTML = `
@@ -1123,7 +1123,7 @@ function placeOrderViaWhatsApp() {
   const orderId = 'GB-' + Math.floor(10000 + Math.random()*90000);
   const items = cart.map(i => `• ${i.name} ×${i.qty} — Rs. ${(i.price*i.qty).toLocaleString()}`).join('\n');
   const total = cartTotal();
-  const ship = total >= 1500 ? 0 : 199;
+  const ship = total >= 1500 ? 0 : 195;
   const msg = encodeURIComponent(
 `🌸 *NEW ORDER — GlowBabe.pk*
 Order ID: *${orderId}*
@@ -1141,7 +1141,7 @@ ${items}
 
 💰 *Payment Summary:*
 Subtotal: Rs. ${total.toLocaleString()}
-Shipping: ${ship === 0 ? 'FREE 🎉' : 'Rs. 150'}
+Shipping: ${ship === 0 ? 'FREE 🎉' : 'Rs. 195'}
 *Total: Rs. ${(total+ship).toLocaleString()}*
 Payment Method: ${orderData.pay}
 
@@ -1176,11 +1176,47 @@ function resetOrder() {
 }
 
 // ─── NEWSLETTER ───
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+
+emailjs.init("GbOp-fLRA41uQ8YkS");
+
 function subscribe() {
-  const v = document.getElementById('nlEmail').value.trim();
-  if (!v || !v.includes('@')) { showToast('⚠️ Please enter a valid email'); return; }
-  showToast('💖 Welcome to the Glow Club! Check your inbox.');
-  document.getElementById('nlEmail').value = '';
+
+  const emailInput = document.getElementById('nlEmail');
+  const email = emailInput.value.trim();
+
+  if (!email || !email.includes('@')) {
+    showToast('⚠️ Please enter a valid email');
+    return;
+  }
+
+  emailjs.send(
+    "service_l0jkx6k",
+    "template_yxxrrm4",
+    {
+      user_email: email
+    }
+  )
+
+  .then(() => {
+
+    showToast('💖 Welcome to Glow Club!');
+
+    emailInput.value = '';
+
+  })
+
+  .catch((error) => {
+
+    console.log(error);
+
+    showToast('❌ Failed to subscribe');
+
+  });
+
 }
 
 // ─── TOAST ───
