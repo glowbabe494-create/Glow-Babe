@@ -946,7 +946,7 @@ function updateCartUI() {
   document.getElementById('cartItemCount').textContent = count > 0 ? `(${count} item${count!==1?'s':''})` : '';
   document.getElementById('cartTotal').textContent = `Rs. ${total.toLocaleString()}`;
   document.getElementById('cartSubtotal').textContent = `Rs. ${total.toLocaleString()}`;
-  document.getElementById('cartShipping').textContent = total >= 1500 ? '🎉 FREE!' : 'Rs. 199';
+  document.getElementById('cartShipping').textContent = total >= 1500 ? '🎉 FREE!' : 'Rs. 150';
   const body = document.getElementById('cartBody');
   const emptyEl = document.getElementById('cartEmptyState');
   const existing = body.querySelectorAll('.cart-item');
