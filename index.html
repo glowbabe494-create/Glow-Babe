@@ -285,18 +285,29 @@ footer{background:var(--dark);color:rgba(255,255,255,.55);padding:70px 80px 28px
 .continue-btn:hover{border-color:var(--rose2);color:var(--rose2)}
 .cart-item {
   display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: flex-start;
+  animation: cartItemIn .3s ease;
 }
 
-.cart-img {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-  border-radius: 8px;
-  display: block;
+.ci-thumb {
+  width: 68px;
+  height: 68px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  overflow: hidden; /* important for image crop */
 }
+
+.ci-thumb img.cart-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
 
 
 
@@ -807,7 +818,7 @@ const products = [
   {id:1,name:"Rose Gold Stackable Ring",cat:"rings",price:849,original:1199,emoji:"💍",badge:"sale",stars:4.9,reviews:182,new:false},
   {id:2,name:"Crystal Waterfall Earrings",cat:"earrings",price:399,original:699,original:null,image:"/assets/earring2.jpg",badge:"Eid Special",stars:5.0,reviews:94,new:true},
   {id:3,name:"Layered Gold Chain Necklace",cat:"necklaces",price:1499,original:1899,emoji:"📿",badge:"hot",stars:4.8,reviews:231,new:false},
-  {id:4,name:"Crystal Hoop Earrings",cat:"earrings",price:799,original:null,emoji:"✨",badge:"new",stars:4.7,reviews:68,new:true},
+  {id:4,name:"Silver Circle Earrings",cat:"earrings",price:449,original:null,image:"/assets/earring1.jpg",badge:"new",stars:4.7,reviews:68,new:true},
   {id:5,name:"Dainty Star Ring Set (3pcs)",cat:"rings",price:1299,original:1699,emoji:"⭐",badge:"sale",stars:4.9,reviews:176,new:false},
   {id:6,name:"Butterfly Hair Clips Set",cat:"hair",price:699,original:null,emoji:"🦋",badge:null,stars:4.6,reviews:112,new:false},
   {id:7,name:"CZ Tennis Chain Bracelet",cat:"bracelets",price:1599,original:null,emoji:"💎",badge:"hot",stars:5.0,reviews:57,new:false},
