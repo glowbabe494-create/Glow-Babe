@@ -982,16 +982,16 @@ function updateCartUI() {
     return;
   }
 
-emptyEl.style.display = 'none';
+  emptyEl.style.display = 'none';
 
-cart.forEach(item => {
-  const d = document.createElement('div');
-  d.className = 'cart-item';
+  cart.forEach(item => {
 
-  d.innerHTML = `
-    <div class="ci-thumb">
-      <img src="${item.img}" alt="${item.name}" class="cart-img">
-    </div>
+    const d = document.createElement('div');
+
+
+    d.className = 'cart-item';
+
+d.innerHTML = `<div class="ci-thumb"><img src="${item.img}" alt="${item.name}" class="cart-img"></div>
     <div class="ci-info">
       <div class="ci-name">${item.name}</div>
       <div class="ci-price">Rs. ${(item.price*item.qty).toLocaleString()}</div>
@@ -1002,11 +1002,13 @@ cart.forEach(item => {
         <span style="font-size:12px;color:var(--muted);margin-left:4px">× Rs.${item.price.toLocaleString()}</span>
       </div>
     </div>
-    <button class="ci-remove" onclick="removeItem(${item.id})">✕</button>
-  `;
+    <button class="ci-remove" onclick="removeItem(${item.id})">✕</button>`;
 
-  body.appendChild(d);
-});
+    body.appendChild(d);
+
+  });
+
+}
 
 
 function openCart() {
