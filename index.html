@@ -1106,7 +1106,7 @@ function doSearch() {
   if (matches.length === 0) { res.innerHTML = '<div class="no-results">😔 No products found for "'+q+'"</div>'; return; }
   res.innerHTML = matches.slice(0,8).map(p => `
     <div class="search-result-item" onclick="addToCart(${p.id});document.getElementById('searchOverlay').classList.remove('open')">
-      <div class="search-emo">${p.image}</div>
+      <img src="${p.image}" class="search-product-img">
       <div class="search-info">
         <div class="search-cat">${p.cat}</div>
         <div class="search-name">${p.name}</div>
