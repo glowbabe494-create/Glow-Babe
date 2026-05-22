@@ -1082,7 +1082,7 @@ function getProductImgHtml(p, size=250) {
     ? `<img src="${p.hoverImage}" class="pi-hover" alt="${p.name}" style="width:100%;height:${size}px;object-fit:cover;">`
     : `<div class="product-emoji-big" style="filter:drop-shadow(0 4px 24px rgba(181,0,78,.35)) brightness(1.1)">${p.image}</div>`;
 
-  return `<div class="image-primary">${primary}</div><div class="image-hover">${hover}</div>`;
+  return `<div class="img-primary">${primary}</div><div class="img-hover">${hover}</div>`;
 }
 
 function renderProducts() {
