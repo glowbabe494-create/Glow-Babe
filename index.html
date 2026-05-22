@@ -188,7 +188,7 @@ section,.section-block{padding:90px 80px}
 .atc-btn{background:var(--dark);color:#fff;border:none;border-radius:var(--r3);padding:9px 18px;font-size:13px;font-weight:600;cursor:pointer;transition:all .25s;font-family:var(--font-b);letter-spacing:.2px;display:flex;align-items:center;gap:6px}
 .atc-btn:hover{background:var(--rose2);transform:scale(1.04)}
 .atc-btn.added{background:#1B5E20}
-.product-image-wrap{position:relative;width:100%;height:250px;overflow:hidden}.product-img{position:absolute;width:100%;height:100%;object-fit:cover;top:0;left:0;transition:opacity .5s ease,transform .6s ease}.hover-img{opacity:0}.product-card:hover .hover-img{opacity:1;transform:scale(1.05)}.product-card:hover .main-img{opacity:0}
+.product-img img { width: 100%; height: 100%; object-fit: cover; /* image neatly fit ho */ display: block; }
 
 /* ─── MARQUEE ─── */
 .marquee-section{background:var(--dark);padding:18px 0;overflow:hidden;border-top:1px solid rgba(201,148,58,.2);border-bottom:1px solid rgba(201,148,58,.2)}
@@ -817,7 +817,7 @@ footer{padding:50px 24px 24px}
 // ─── DATA ───
 const products = [
   {id:1,name:"Rose Gold Stackable Ring",cat:"rings",price:849,original:1199,emoji:"💍",badge:"sale",stars:4.9,reviews:182,new:false},
- {id:2,name:"Crystal Waterfall Earrings",cat:"earrings",price:399,original:699,image:"./src/assets/earring2.jpg",hoverImage:"./src/assets/earring2-hover.jpg",badge:"Eid Special",stars:5.0,reviews:94,new:true},
+  {id:2,name:"Crystal Waterfall Earrings",cat:"earrings",price:399,original:699,original:null,image:"/assets/earring2.jpg",badge:"Eid Special",stars:5.0,reviews:94,new:true},
   {id:3,name:"Layered Gold Chain Necklace",cat:"necklaces",price:1499,original:1899,emoji:"📿",badge:"hot",stars:4.8,reviews:231,new:false},
   {id:4,name:"Silver Circle Earrings",cat:"earrings",price:449,original:null,image:"/assets/earring1.jpg",badge:"new",stars:4.7,reviews:68,new:true},
   {id:5,name:"Dainty Star Ring Set (3pcs)",cat:"rings",price:1299,original:1699,emoji:"⭐",badge:"sale",stars:4.9,reviews:176,new:false},
