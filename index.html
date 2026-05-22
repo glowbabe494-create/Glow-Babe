@@ -1075,7 +1075,7 @@ function getProductImgHtml(p, size=250) {
   // Primary image
   const primary = p.image
     ? `<img src="${p.image}" class="pi-main" alt="${p.name}" style="width:100%;height:${size}px;object-fit:cover;">`
-    : `<div class="product-emoji-big">${p.emoji}</div>`;
+    : `<div class="product-emoji-big">${p.image}</div>`;
 
   // Hover image — use hoverImage if available, else slightly different emoji/tint
   const hover = p.hoverImage
