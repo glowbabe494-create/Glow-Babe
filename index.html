@@ -71,6 +71,13 @@ nav{background:rgba(255,250,248,.96);backdrop-filter:blur(20px);border-bottom:1p
 .search-close{position:absolute;top:20px;right:28px;background:rgba(255,255,255,.15);border:none;color:#fff;font-size:22px;cursor:pointer;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .2s}
 .search-close:hover{background:rgba(255,255,255,.25)}
 .no-results{padding:32px;text-align:center;color:var(--muted);font-size:15px}
+.search-product-img{
+  width:60px;
+  height:60px;
+  object-fit:cover;
+  border-radius:12px;
+  display:block;
+}
 
 /* ─── HERO ─── */
 .hero{min-height:92vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:0 80px;background:linear-gradient(135deg,#0F0A0C 0%,#1C0812 40%,#2A0A1A 70%,#1C0812 100%);position:relative;overflow:hidden;gap:60px}
@@ -1099,7 +1106,7 @@ function doSearch() {
   if (matches.length === 0) { res.innerHTML = '<div class="no-results">😔 No products found for "'+q+'"</div>'; return; }
   res.innerHTML = matches.slice(0,8).map(p => `
     <div class="search-result-item" onclick="addToCart(${p.id});document.getElementById('searchOverlay').classList.remove('open')">
-      <div class="search-emo">${p.emoji}</div>
+      <div class="search-emo">${p.image}</div>
       <div class="search-info">
         <div class="search-cat">${p.cat}</div>
         <div class="search-name">${p.name}</div>
