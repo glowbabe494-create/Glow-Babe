@@ -1056,10 +1056,7 @@ function selectColor(productId, colorName, el) {
   // Update all swatches for this product in the grid
   const card = el.closest('.product-card');
   if (!card) return;
-  const swatches = card.querySelectorAll('.swatch');
-  const p = products.find(x => x.id === productId);
-  swatches.forEach((sw, i) => {
-    sw.classList.toggle('selected', p.colors[i].name === colorName);
+  const c = p.colors.find(x => x.name === colorName); const img = card.querySelector(".pi-main"); if (img && c && c.image) { img.src = c.image;
   });
   // Update label
   const label = card.querySelector('.color-label');
