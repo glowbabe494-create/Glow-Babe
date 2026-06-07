@@ -182,6 +182,9 @@ section,.section-block{padding:90px 80px}
 .wish-btn.wishlisted{background:var(--rose-pale);border-color:var(--rose2)}
 .quick-add{position:absolute;bottom:0;left:0;right:0;background:var(--rose2);color:#fff;border:none;padding:12px;font-size:13px;font-weight:600;cursor:pointer;transform:translateY(100%);transition:transform .3s;letter-spacing:.3px;font-family:var(--font-b);z-index:5}
 .product-card:hover .quick-add{transform:translateY(0)}
+.img-hover{pointer-events:none}                        /*new ha ye be */
+.product-img.show-hover .img-primary{opacity:0}            /*new ha ye be */
+.product-img.show-hover .img-hover{opacity:1}          /*new line*/ 
 .product-info{padding:18px 20px 22px}
 .product-cat-label{font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--rose2);margin-bottom:6px}
 .product-title{font-family:var(--font-h);font-size:18px;font-weight:500;color:var(--dark);margin-bottom:8px;line-height:1.35}
@@ -812,22 +815,22 @@ const products = [
     ]
   },
   {
-    id:2,
-name:"Crystal Waterfall Earrings",
-cat:"earrings",
-price:399,
-original:null,
-image:"/assets/earring2.jpg",
-hoverImage:"/assets/earring2-hover.jpg",
-stars:5.0,
-reviews:94,
-new:true,
-colors:[
-  {name:"White",hex:"#FFFFFF",soldOut:false},
-  {name:"Black",hex:"#000000",soldOut:false},
- // {name:"Violet",hex:"#9C27B0",soldOut:false},
-    ]
-  },
+{
+  id:2,
+  name:"Crystal Waterfall Earrings",
+  cat:"earrings",
+  price:399,
+  original:null,
+  image:"/assets/earring2.jpg",
+  hoverImage:"/assets/earring2-hover.jpg",
+  stars:5.0,
+  reviews:94,
+  new:true,
+  colors:[
+    {name:"Silver", hex:"#C0C0C0", soldOut:false, image:"/assets/earring2-silver.jpg",  hoverImage:"/assets/earring2-silver-hover.jpg"},
+    {name:"Black", hex:"#000000", soldOut:false, image:"/assets/earring2-black.jpg",  hoverImage:"/assets/earring2-black-hover.jpg"},
+  ]
+},
   {
     id:3, name:"Layered Gold Chain Necklace", cat:"necklaces", price:1499, original:1899,
     emoji:"📿", badge:"hot", stars:4.8, reviews:231, new:false,
@@ -1057,29 +1060,38 @@ function selectColor(productId, colorName, el) {
   const card = el.closest('.product-card');
   if (!card) return;
 
-  const swatches = card.querySelectorAll('.swatch');
   const p = products.find(x => x.id === productId);
+  const swatches = card.querySelectorAll('.swatch');
 
   swatches.forEach((sw, i) => {
     sw.classList.toggle('selected', p.colors[i].name === colorName);
   });
 
-  // Update label
+  // Label update
   const label = card.querySelector('.color-label');
   if (label) {
     const c = p.colors.find(x => x.name === colorName);
-    label.innerHTML = colorName + (c && c.soldOut ? 
+    label.innerHTML = colorName + (c && c.soldOut ?
       ' <span style="color:#E53935;font-style:normal;font-size:10px">Sold Out</span>' : '');
   }
 
-  // ✅ Update product images
-  const mainImage = card.querySelector('.img-primary');
-  const hoverImage = card.querySelector('.img-hover');
-  const selectedColor = p.colors.find(x => x.name === colorName);
+  // Image swap — color ki image ya product ki default
+  const c = p.colors.find(x => x.name === colorName);
+  const productImg = card.querySelector('.product-img');
+  const primaryImg = card.querySelector('.img-primary img');
+  const hoverImg = card.querySelector('.img-hover img');
 
-  if (selectedColor) {
-    if (mainImage) mainImage.src = selectedColor.defaultImage;
-    if (hoverImage) hoverImage.src = selectedColor.hoverImage;
+  // Agar color ka apna image ho
+  if (c && c.image) {
+    if (primaryImg) primaryImg.src = c.image;
+    if (hoverImg) hoverImg.src = c.hoverImage || c.image;
+    // Mobile: class se show karo
+    productImg.classList.add('show-hover');
+    setTimeout(() => productImg.classList.remove('show-hover'), 1200);
+  } else {
+    // Default product image restore
+    if (primaryImg) primaryImg.src = p.image || '';
+    if (hoverImg) hoverImg.src = p.hoverImage || p.image || '';
   }
 }
 
