@@ -1069,24 +1069,28 @@ function selectColor(productId, colorName, el) {
       ' <span style="color:#E53935;font-style:normal;font-size:10px">Sold Out</span>' : '');
   }
 
-  // Image swap — color ki image ya product ki default
+  // Image swap
   const c = p.colors.find(x => x.name === colorName);
-  const productImg = card.querySelector('.product-img');
-  const primaryImg = card.querySelector('.img-primary img');
-  const hoverImg = card.querySelector('.img-hover img');
+  const primaryDiv = card.querySelector('.img-primary');
+  const hoverDiv   = card.querySelector('.img-hover');
 
-  // Agar color ka apna image ho
-  if (c && c.image) {
-    if (primaryImg) primaryImg.src = c.image;
-    if (hoverImg) hoverImg.src = c.hoverImage || c.image;
-    // Mobile: class se show karo
-    productImg.classList.add('show-hover');
-    setTimeout(() => productImg.classList.remove('show-hover'), 1200);
-  } else {
-    // Default product image restore
-    if (primaryImg) primaryImg.src = p.image || '';
-    if (hoverImg) hoverImg.src = p.hoverImage || p.image || '';
-  }
+  const newMain  = (c && c.image)      ? c.image      : (p.image || '');
+  const newHover = (c && c.hoverImage) ? c.hoverImage : (p.hoverImage || newMain);
+
+  if (primaryDiv) primaryDiv.innerHTML = newMain
+    ? `<img src="${newMain}" style="width:100%;height:100%;object-fit:cover;display:block;">`
+    : `<div class="product-emoji-big">${p.emoji || '💍'}</div>`;
+
+  if (hoverDiv) hoverDiv.innerHTML = newHover
+    ? `<img src="${newHover}" style="width:100%;height:100%;object-fit:cover;display:block;">`
+    : `<div class="product-emoji-big">${p.emoji || '💍'}</div>`;
+
+  // ── show-hover HATA DIYA — same image thi to flash confuse karta tha ──
+}
+
+  // Mobile pe flash effect — show-hover class
+  productImgBox.classList.add('show-hover');
+  setTimeout(() => productImgBox.classList.remove('show-hover'), 1500);
 }
 
 
