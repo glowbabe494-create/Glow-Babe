@@ -1056,13 +1056,24 @@ function selectColor(productId, colorName, el) {
   // Update all swatches for this product in the grid
   const card = el.closest('.product-card');
   if (!card) return;
-  const c = p.colors.find(x => x.name === colorName); const img = card.querySelector(".pi-main"); if (img && c && c.image) { img.src = c.image;
+  const swatches = card.querySelectorAll('.swatch');
+  const p = products.find(x => x.id === productId);
+  swatches.forEach((sw, i) => {
+    sw.classList.toggle('selected', p.colors[i].name === colorName);
   });
   // Update label
   const label = card.querySelector('.color-label');
   if (label) {
     const c = p.colors.find(x => x.name === colorName);
     label.innerHTML = colorName + (c && c.soldOut ? ' <span style="color:#E53935;font-style:normal;font-size:10px">Sold Out</span>' : '');
+  }      // ✅ Update product images
+  const mainImage = card.querySelector('.img-primary');
+  const hoverImage = card.querySelector('.img-hover');
+  const selectedColor = p.colors.find(x => x.name === colorName);
+
+  if (selectedColor) {
+    if (mainImage) mainImage.src = selectedColor.defaultImage;
+    if (hoverImage) hoverImage.src = selectedColor.hoverImage;
   }
 }
 
